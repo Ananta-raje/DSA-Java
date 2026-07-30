@@ -74,21 +74,21 @@ public class java {
         //  }
    //4.Write a Java method to compute the sum of the digits in an integer.
 
-      public static int sumOfdigit(int n){
-      int sum = 0;
-      while ( n > 0) {
-        int lastDigit = n % 10;
-        sum = sum + lastDigit;
-        n = n / 10;
-      }
-      return sum;
-      }
-      public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter digits : ");
-        int digit = sc.nextInt();
-        System.out.println("The sum of digits is : "+ sumOfdigit(digit));
-      }
+        // public static int sumOfdigit(int n){
+        // int sum = 0;
+        // while ( n > 0) {
+        //     int lastDigit = n % 10;
+        //     sum = sum + lastDigit;
+        //     n = n / 10;
+        // }
+        // return sum;
+        // }
+        // public static void main(String[] args) {
+        //     Scanner sc = new Scanner(System.in);
+        //     System.out.print("Enter digits : ");
+        //     int digit = sc.nextInt();
+        //     System.out.println("The sum of digits is : "+ sumOfdigit(digit));
+        // }
 
 //Reverse of an array
     // public static void reverseArr(int numbers[]){
