@@ -48,7 +48,7 @@ public class ArraysCC{
           
         // }
 
-// Binary Search
+// Binary Search(array must be sorted) -- find the index of an element in given array
     //  public static int binarySearch(int number[],int key){
     //     int start = 0 ,end = number.length-1;
 
@@ -72,7 +72,7 @@ public class ArraysCC{
      
     // public static void main(String[] args) {
     //       int number[] = {2,4,6,8,10,12,14};
-    //     int key = 20;
+    //       int key = 20;
 
     //     System.out.println("key is at :"+binarySearch(number, key));
     // }
