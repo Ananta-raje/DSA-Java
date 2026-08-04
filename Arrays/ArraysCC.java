@@ -1,7 +1,7 @@
 
 
 public class ArraysCC{
-// find the index of element in a given array
+// find the index of element in a given array ---Linear Search 
     // public static int LinearSearch(int numbers[],int key){
     //     for (int i=0;i<numbers.length;i++){
     //         if(numbers[i]==key){
@@ -24,22 +24,29 @@ public class ArraysCC{
 // }
 
 
-//find the largest value in the given array
-    //  public static int LargestValue(int number[]){
-    //     int largest = Integer.MIN_VALUE;
+//find the largest value in the given array also the smallest value in the array
+        // public static int Value(int number[]){
+        //     int largest = Integer.MIN_VALUE;
+        //     int smallest = Integer.MAX_VALUE;
 
-    //     for(int i=0; i<number.length;i++){
-    //         if(largest<number[i]){
-    //             largest = number[i];
-    //         }
-    //     }
-    //     return largest;
-    // }
-    // public static void main(String[] args) {
-    
-    //      int number[] = {1,2,6,3,5};
-    //      System.out.println("The largest number is:"+LargestValue(number));
-    // }
+        //     for(int i=0; i<number.length;i++){
+        //         if(largest<number[i]){
+        //             largest = number[i];
+        //         }
+        //         if(smallest > number[i]) {
+        //             smallest = number[i];
+        //         }
+        //     }
+        //         System.out.println("The samllest value is:"+ smallest);
+        //         return largest;
+                
+        //     }
+        // public static void main(String[] args) {
+        
+        //     int number[] = {1,2,6,3,5};
+        //     System.out.println("The largest number is:"+Value(number));
+          
+        // }
 
 // Binary Search
     //  public static int binarySearch(int number[],int key){
