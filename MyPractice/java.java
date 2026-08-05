@@ -1,5 +1,8 @@
 package MyPractice;
 
+
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class java {
@@ -90,7 +93,7 @@ public class java {
         //     System.out.println("The sum of digits is : "+ sumOfdigit(digit));
         // }
 
-//Reverse of an array
+//5)Reverse of an array
     // public static void reverseArr(int numbers[]){
     //     int start  = 0 ; int last = numbers.length-1 ;
     //     while(start<last){
@@ -112,7 +115,7 @@ public class java {
 
     // }
 
-// find the index on an array
+// 6)find the index on an array
 
 //    public static int LinearSearch(int numbers[],int key){
 //       for(int i = 0; i<numbers.length; i++){
@@ -134,7 +137,7 @@ public class java {
         
 //     }
 
-// find the largest value in the array
+// 7)find the largest value in the array
 
 //   public static int LargestValue(int arr[]){
 //     int largest = Integer.MIN_VALUE;
@@ -150,7 +153,7 @@ public class java {
 //     System.out.println("The largest value in the given array is:"+LargestValue(arr));
 //   }
 
-//Majority element in array n-- by brute force approach
+// 8)Majority element in array n-- by brute force approach
 //  public static int majorityEl(int arr[]){
 //  int n = arr.length;
 //  for(int i = 0; i < n; i++){
@@ -170,5 +173,38 @@ public class java {
 //     int arr[] = {1,2,3,2,2,2};
 //     System.out.println(majorityEl(arr));
 //  }
+
+// 9) Find the missing number and repeated 
+
+  
+    public static int[] findMissingAndRepeatedValues(int[][] grid) {
+        HashSet<Integer> set = new HashSet<>();
+        int n = grid.length;
+        int sq = n*n;
+        int currSum = 0;
+        int[] ans = new int[2];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(set.contains(grid[i][j])){
+                  ans[0] = grid[i][j];
+                }else{
+                    set.add(grid[i][j]);
+                    currSum+=grid[i][j];
+                }
+            }
+        }
+        int totalSum = sq *(sq+1)/2;
+        ans[1] = totalSum - currSum;
+        return ans;
+    }
+    public static void main(String[] args) {
+       
+        int[][] grid = {
+                {1, 3},
+                {2, 2}
+            };
+        System.out.println(Arrays.toString(findMissingAndRepeatedValues(grid)) );
+    }
+
 
 }
