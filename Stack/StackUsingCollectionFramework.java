@@ -121,6 +121,98 @@ public class StackUsingCollectionFramework {
         //     System.out.println(isValid(str));
 
         // }     
+
+        //Duplicate parenthesis
+
+        // public static boolean isDuplicate(String str){
+        //  Stack <Character> s = new Stack<>();
+
+        //  for(int i = 0; i < str.length(); i++){
+        //   char ch = str.charAt(i);
+        //   //closing
+        //   if (ch == ')') {
+        //     int count = 0;
+        //     while (s.peek() != '(') {
+        //         s.pop();
+        //         count++;
+        //     }
+        //     if (count < 1) {
+        //         return true; //duplicate
+        //     } else {
+        //         s.pop(); // opening pair
+        //     }
+        //   }else{
+        //     //opening
+        //     s.push(ch);
+        //   }
+        //  }
+        //  return false;
+        // }
+        // public static void main(String[] args) {
+        //     String str = "((a + b))";
+        //     System.out.println(isDuplicate(str));
+
+        // }
     
+        //max area histogram
+        
+
+        public static int maxArea(int[] arr) {
+            int n = arr.length;
+
+            int[] nsl = new int[n];
+            int[] nsr = new int[n];
+
+            Stack<Integer> s = new Stack<>();
+
+            // Next Smaller Left
+            for (int i = 0; i < n; i++) {
+                while (!s.isEmpty() && arr[s.peek()] >= arr[i]) {
+                    s.pop();
+                }
+
+                if (s.isEmpty()) {
+                    nsl[i] = -1;
+                } else {
+                    nsl[i] = s.peek();
+                }
+
+                s.push(i);
+            }
+
+            s.clear();
+
+            // Next Smaller Right
+            for (int i = n - 1; i >= 0; i--) {
+                while (!s.isEmpty() && arr[s.peek()] >= arr[i]) {
+                    s.pop();
+                }
+
+                if (s.isEmpty()) {
+                    nsr[i] = n;
+                } else {
+                    nsr[i] = s.peek();
+                }
+
+                s.push(i);
+            }
+
+            int maxArea = 0;
+
+            for (int i = 0; i < n; i++) {
+                int width = nsr[i] - nsl[i] - 1;
+                int area = arr[i] * width;
+                maxArea = Math.max(maxArea, area);
+            }
+
+            return maxArea;
+        }
+
+        public static void main(String[] args) {
+            int[] arr = {2, 1, 5, 6, 2, 3};
+
+            System.out.println("The max area of histogram is :" + maxArea(arr));
+        }
+
 }
 
