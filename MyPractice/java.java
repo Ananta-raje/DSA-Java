@@ -217,102 +217,116 @@ public class java {
 
     // 10)Merge two sorted array without extra space -- Brute force approach
 
-        // public static void mergeSorted(int arr1[], int arr2[]) {
-        //     int n = arr1.length;
-        //     int m = arr2.length;
+    // public static void mergeSorted(int arr1[], int arr2[]) {
+    // int n = arr1.length;
+    // int m = arr2.length;
 
-        //     for (int i = 0; i < n; i++) {
-        //         if (arr1[i] > arr2[0]) {
+    // for (int i = 0; i < n; i++) {
+    // if (arr1[i] > arr2[0]) {
 
-        //             // swap
-        //             int temp = arr1[i];
-        //             arr1[i] = arr2[0];
-        //             arr2[0] = temp;
+    // // swap
+    // int temp = arr1[i];
+    // arr1[i] = arr2[0];
+    // arr2[0] = temp;
 
-        //             // sort arr2[]
-        //             Arrays.sort(arr2);
-        //         }
-        //     }
-        // }
+    // // sort arr2[]
+    // Arrays.sort(arr2);
+    // }
+    // }
+    // }
 
-        // public static void main(String[] args) {
-        //     int arr1[] = { 1, 4, 7, 8 };
-        //     int arr2[] = { 2, 3, 6, 9 };
+    // public static void main(String[] args) {
+    // int arr1[] = { 1, 4, 7, 8 };
+    // int arr2[] = { 2, 3, 6, 9 };
 
-        //     System.out.println(arr1);
-        //     System.out.println(Arrays.toString(arr1));
-        //     mergeSorted(arr1, arr2);
-        //     System.out.println(arr1);
-        //     System.out.println(Arrays.toString(arr1));
+    // System.out.println(arr1);
+    // System.out.println(Arrays.toString(arr1));
+    // mergeSorted(arr1, arr2);
+    // System.out.println(arr1);
+    // System.out.println(Arrays.toString(arr1));
 
-        //     System.out.println("arr1 = " + Arrays.toString(arr1));
-        //     System.out.println("arr2 = " + Arrays.toString(arr2));
+    // System.out.println("arr1 = " + Arrays.toString(arr1));
+    // System.out.println("arr2 = " + Arrays.toString(arr2));
 
-        // }
-    //11)Merge two sorted array without extra space -- Two pointer approach
-        
-        // public static void mergeSorted(int arr1[], int arr2[]){
-        // int i = arr1.length - 1;
-        // int j = 0;
+    // }
+    // 11)Merge two sorted array without extra space -- Two pointer approach
 
-        // while (i >= 0 && j < arr2.length) {
-            
-        //     if ( arr1[i] > arr2[j]) {
-                
-        //         //swap 
-        //         int temp = arr1[i];
-        //         arr1[i] = arr2[j];
-        //         arr2[j] = temp;
+    // public static void mergeSorted(int arr1[], int arr2[]){
+    // int i = arr1.length - 1;
+    // int j = 0;
 
-        //         i--;
-        //         j++;  
-        //     }else{
-        //         break;
-        //     }
-        // }
-        // Arrays.sort(arr1);
-        // Arrays.sort(arr2);
-        // }
-        // public static void main(String[] args) {
-        //     int arr1[] = {1, 4, 7, 8};
-        //     int arr2[] = {2, 3, 6, 9};
-            
-        //     mergeSorted(arr1, arr2);
+    // while (i >= 0 && j < arr2.length) {
 
-        // }
+    // if ( arr1[i] > arr2[j]) {
 
+    // //swap
+    // int temp = arr1[i];
+    // arr1[i] = arr2[j];
+    // arr2[j] = temp;
 
-   //12) Merger two sorted arrays-- leetcode 88
-        //public static void merge(int nums1[], int m, int nums2[], int n){
-        
-        //     int i = m - 1;
-        //     int j = n - 1;
-        //     int k = m + n -1;
+    // i--;
+    // j++;
+    // }else{
+    // break;
+    // }
+    // }
+    // Arrays.sort(arr1);
+    // Arrays.sort(arr2);
+    // }
+    // public static void main(String[] args) {
+    // int arr1[] = {1, 4, 7, 8};
+    // int arr2[] = {2, 3, 6, 9};
 
-        //     while (i >= 0 && j >= 0) {
-        //         if (nums1[i] > nums2[j]) {
-        //             nums1[k] = nums1[i];
-        //             i--;
-        //         }else{
-        //             nums1[k] = nums2[j];
-        //             j--;
-        //         }
-        //         k--;
-        //     }
+    // mergeSorted(arr1, arr2);
 
-        //     while (j >= 0) {
-        //         nums1[k] = nums2[j];
-        //         j--;
-        //         k--;
-        //     }
-        // }
-        // public static void main(String[] args) {
-        //     int nums1[] = {1, 2, 3, 0, 0 ,0};
-        //     int nums2[] = {2, 5, 6};
-        //     int m = 3;
-        //     int n = 3;
-        //    merge(nums1, m, nums2, n);
+    // }
 
-        //     System.out.println(Arrays.toString(nums1));
-        // }
+    // 12) Merger two sorted arrays-- leetcode 88
+    // public static void merge(int nums1[], int m, int nums2[], int n){
+
+    // int i = m - 1;
+    // int j = n - 1;
+    // int k = m + n -1;
+
+    // while (i >= 0 && j >= 0) {
+    // if (nums1[i] > nums2[j]) {
+    // nums1[k] = nums1[i];
+    // i--;
+    // }else{
+    // nums1[k] = nums2[j];
+    // j--;
+    // }
+    // k--;
+    // }
+
+    // while (j >= 0) {
+    // nums1[k] = nums2[j];
+    // j--;
+    // k--;
+    // }
+    // }
+    // public static void main(String[] args) {
+    // int nums1[] = {1, 2, 3, 0, 0 ,0};
+    // int nums2[] = {2, 5, 6};
+    // int m = 3;
+    // int n = 3;
+    // merge(nums1, m, nums2, n);
+
+    // System.out.println(Arrays.toString(nums1));
+    // }
+
+    // 136- single number -- using XOR operator
+    public static int singleNumber(int nums[]) {
+        int n = nums.length;
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans = ans ^ nums[i];
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int nums[] = { 4, 1, 2, 1, 2 };
+        System.out.println(singleNumber(nums));
+    }
 }
