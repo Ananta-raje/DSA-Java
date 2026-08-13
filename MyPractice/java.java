@@ -316,17 +316,74 @@ public class java {
     // }
 
     // 136- single number -- using XOR operator
-    public static int singleNumber(int nums[]) {
-        int n = nums.length;
-        int ans = 0;
-        for (int i = 0; i < n; i++) {
-            ans = ans ^ nums[i];
-        }
-        return ans;
-    }
+    // public static int singleNumber(int nums[]) {
+    // int n = nums.length;
+    // int ans = 0;
+    // for (int i = 0; i < n; i++) {
+    // ans = ans ^ nums[i];
+    // }
+    // return ans;
+    // }
 
-    public static void main(String[] args) {
-        int nums[] = { 4, 1, 2, 1, 2 };
-        System.out.println(singleNumber(nums));
-    }
+    // public static void main(String[] args) {
+    // int nums[] = { 4, 1, 2, 1, 2 };
+    // System.out.println(singleNumber(nums));
+    // }
+
+    // pow(x,n) -- Brute force approach -- o(n)-complexity
+
+    // public static double pow(double x, long n) {
+    // long power = n;
+    // boolean negative = power < 0;
+    // if (power == 0) {
+    // return 1;
+    // } else if (negative) {
+    // power = -power;
+    // }
+    // double result = 1;
+    // for (int i = 0; i < power; i++) {
+    // result = result * x;
+    // }
+
+    // if (negative) {
+    // return 1 / result;
+    // }
+
+    // return result;
+    // }
+
+    // public static void main(String[] args) {
+    // double x = 2;
+    // int n = 10;
+    // System.out.println(pow(x, n));
+    // }
+
+    // pow(x,n) - using recursive divide and conquer
+    // public static double myPow(double x, long n){
+    // long power = n;
+
+    // if (power < 0) {
+    //     return 1 /pow(x, -power);
+    // }
+    // return pow(x, power);
+    // }
+
+    // public static double pow(double x, long n) {
+    //     if (n == 0) {
+    //         return 1;
+    //     }
+    //     double half = pow(x, n/2);
+
+    //     if (n % 2 == 0) {
+    //         return half * half;
+    //     }else{
+    //         return half * half * x;
+    //     }
+    // }
+
+    // public static void main(String[] args) {
+    //     double x = 2;
+    //     long n = 10;
+    //     System.out.println(myPow(x, n));
+    // }
 }
