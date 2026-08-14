@@ -363,27 +363,69 @@ public class java {
     // long power = n;
 
     // if (power < 0) {
-    //     return 1 /pow(x, -power);
+    // return 1 /pow(x, -power);
     // }
     // return pow(x, power);
     // }
 
     // public static double pow(double x, long n) {
-    //     if (n == 0) {
-    //         return 1;
-    //     }
-    //     double half = pow(x, n/2);
+    // if (n == 0) {
+    // return 1;
+    // }
+    // double half = pow(x, n/2);
 
-    //     if (n % 2 == 0) {
-    //         return half * half;
-    //     }else{
-    //         return half * half * x;
-    //     }
+    // if (n % 2 == 0) {
+    // return half * half;
+    // }else{
+    // return half * half * x;
+    // }
     // }
 
     // public static void main(String[] args) {
-    //     double x = 2;
-    //     long n = 10;
-    //     System.out.println(myPow(x, n));
+    // double x = 2;
+    // long n = 10;
+    // System.out.println(myPow(x, n));
+    // }
+
+    // Maximum Subarray- 53 - using brute force approach - O(n3)- complexity
+    // public static int maxSubArray(int arr[]) {
+    // int n = arr.length;
+    // int max = Integer.MIN_VALUE;
+    // for (int i = 0; i < n; i++) {
+    // for (int j = i; j < n; j++) {
+    // int sum = 0;
+    // for (int k = i; k <= j; k++) {
+    // sum += arr[k];
+    // max = Math.max(sum, max);
+    // }
+    // }
+    // }
+    // return max;
+    // }
+
+    // public static void main(String[] args) {
+    // int arr[] = {-2,1,-3,4,-1,2,1,-5,4};
+    // System.out.println(maxSubArray(arr));
+    // }
+
+    // Maximum Subarray - kadane's algorithm --"Should I start a new subarray with
+    // this element, or should I add this element to my existing subarray?"
+    // public static int maxSubArrays(int arr[]){
+    //     int n = arr.length;
+    //     int currSum = arr[0];
+    //     int maxSum = arr[0];
+
+    //     for(int i = 1; i < n; i++){
+    //         currSum = Math.max(arr[i], currSum + arr[i]);
+    //         maxSum = Math.max(maxSum, currSum);
+    //     }
+
+    //     return maxSum;
+
+    // }
+
+    // public static void main(String[] args) {
+    //     int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+    //     System.out.println(maxSubArrays(arr));
     // }
 }
