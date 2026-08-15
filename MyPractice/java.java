@@ -428,4 +428,31 @@ public class java {
     //     int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
     //     System.out.println(maxSubArrays(arr));
     // }
+
+
+    //Container with the most water
+
+    public static int maxArea(int[] height) {
+        int left = 0, right = height.length - 1;
+        int maxArea = 0;
+
+        while (left < right) {
+            int ht = Math.min(height[left], height[right]);
+            int wt = right - left;
+            maxArea = Math.max(maxArea, ht * wt);
+
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+       int  height [] = {1,8,6,2,5,4,8,3,7};
+       System.out.println(maxArea(height));
+    }
 }
