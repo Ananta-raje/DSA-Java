@@ -431,28 +431,27 @@ public class java {
 
 
     //Container with the most water
+    // public static int maxArea(int[] height) {
+    //     int left = 0, right = height.length - 1;
+    //     int maxArea = 0;
 
-    public static int maxArea(int[] height) {
-        int left = 0, right = height.length - 1;
-        int maxArea = 0;
+    //     while (left < right) {
+    //         int ht = Math.min(height[left], height[right]);
+    //         int wt = right - left;
+    //         maxArea = Math.max(maxArea, ht * wt);
 
-        while (left < right) {
-            int ht = Math.min(height[left], height[right]);
-            int wt = right - left;
-            maxArea = Math.max(maxArea, ht * wt);
+    //         if (height[left] < height[right]) {
+    //             left++;
+    //         } else {
+    //             right--;
+    //         }
+    //     }
 
-            if (height[left] < height[right]) {
-                left++;
-            } else {
-                right--;
-            }
-        }
+    //     return maxArea;
+    // }
 
-        return maxArea;
-    }
-
-    public static void main(String[] args) {
-       int  height [] = {1,8,6,2,5,4,8,3,7};
-       System.out.println(maxArea(height));
-    }
+    // public static void main(String[] args) {
+    //    int  height [] = {1,8,6,2,5,4,8,3,7};
+    //    System.out.println(maxArea(height));
+    // }
 }
