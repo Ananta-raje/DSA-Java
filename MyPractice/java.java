@@ -411,47 +411,99 @@ public class java {
     // Maximum Subarray - kadane's algorithm --"Should I start a new subarray with
     // this element, or should I add this element to my existing subarray?"
     // public static int maxSubArrays(int arr[]){
-    //     int n = arr.length;
-    //     int currSum = arr[0];
-    //     int maxSum = arr[0];
+    // int n = arr.length;
+    // int currSum = arr[0];
+    // int maxSum = arr[0];
 
-    //     for(int i = 1; i < n; i++){
-    //         currSum = Math.max(arr[i], currSum + arr[i]);
-    //         maxSum = Math.max(maxSum, currSum);
-    //     }
+    // for(int i = 1; i < n; i++){
+    // currSum = Math.max(arr[i], currSum + arr[i]);
+    // maxSum = Math.max(maxSum, currSum);
+    // }
 
-    //     return maxSum;
+    // return maxSum;
 
     // }
 
     // public static void main(String[] args) {
-    //     int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
-    //     System.out.println(maxSubArrays(arr));
+    // int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+    // System.out.println(maxSubArrays(arr));
     // }
 
-
-    //Container with the most water
+    // Container with the most water
     // public static int maxArea(int[] height) {
-    //     int left = 0, right = height.length - 1;
-    //     int maxArea = 0;
+    // int left = 0, right = height.length - 1;
+    // int maxArea = 0;
 
-    //     while (left < right) {
-    //         int ht = Math.min(height[left], height[right]);
-    //         int wt = right - left;
-    //         maxArea = Math.max(maxArea, ht * wt);
+    // while (left < right) {
+    // int ht = Math.min(height[left], height[right]);
+    // int wt = right - left;
+    // maxArea = Math.max(maxArea, ht * wt);
 
-    //         if (height[left] < height[right]) {
-    //             left++;
-    //         } else {
-    //             right--;
-    //         }
-    //     }
+    // if (height[left] < height[right]) {
+    // left++;
+    // } else {
+    // right--;
+    // }
+    // }
 
-    //     return maxArea;
+    // return maxArea;
     // }
 
     // public static void main(String[] args) {
-    //    int  height [] = {1,8,6,2,5,4,8,3,7};
-    //    System.out.println(maxArea(height));
+    // int height [] = {1,8,6,2,5,4,8,3,7};
+    // System.out.println(maxArea(height));
     // }
+
+    // sort color problem - 75 - using counting approach - easy way -TC - O(n)
+    // SC-O(1)
+
+    public static int[] sortColors(int arr[]) {
+        int count0 = 0;
+        int count1 = 0;
+        int count2 = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count0++;
+            } else if (arr[i] == 1) {
+                count1++;
+            } else { // arr[i] == 2
+                count2++;
+            }
+        }
+
+        int index = 0;
+        // for 0s
+        while (count0 > 0) {
+            arr[index] = 0;
+            index++;
+            count0--;
+        }
+
+        // for 1
+        while (count1 > 0) {
+            arr[index] = 1;
+            index++;
+            count1--;
+        }
+
+        // for 2
+        while (count2 > 0) {
+            arr[index] = 2;
+            index++;
+            count2--;
+        }
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 2, 0, 2, 1, 1, 0 };
+        int newArray[] = sortColors(arr);
+
+        for (int i = 0; i < newArray.length; i++) {
+            System.out.print(newArray[i] + " ");
+        }
+        System.out.println();
+    }
 }
