@@ -3,8 +3,11 @@ package MyPractice;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class java {
 
@@ -489,57 +492,135 @@ public class java {
     // }
 
     // 3sum problem using optimized approach -- that remove duplicates
-    public static List<List<Integer>> threeSum(int nums[]) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+    // public static List<List<Integer>> threeSum(int nums[]) {
+    // List<List<Integer>> result = new ArrayList<List<Integer>>();
 
-        // sort
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
-            
-            int left = i + 1;
-            int right = nums.length -1;
+    // // sort
+    // Arrays.sort(nums);
+    // for (int i = 0; i < nums.length - 2; i++) {
+    // if (i > 0 && nums[i] == nums[i - 1]) {
+    // continue;
+    // }
 
-            while (left < right) {
-                int sum = nums[i] + nums[left] + nums[right];
+    // int left = i + 1;
+    // int right = nums.length -1;
 
-                if (sum == 0) {
-                    List<Integer> triplets = new ArrayList<Integer>();
+    // while (left < right) {
+    // int sum = nums[i] + nums[left] + nums[right];
 
-                    triplets.add(nums[i]);
-                    triplets.add(nums[left]);
-                    triplets.add(nums[right]);
+    // if (sum == 0) {
+    // List<Integer> triplets = new ArrayList<Integer>();
 
-                    result.add(triplets);
-  
-                    //remove duplicates
-                    while(left < right && nums[left] == nums[left+1]){
-                        left++;
-                    }
+    // triplets.add(nums[i]);
+    // triplets.add(nums[left]);
+    // triplets.add(nums[right]);
 
-                    //remove duplicates
-                    while (left < right && nums[right] == nums[right - 1]) {
-                        right--;
-                    }
-                    
-                    left++;
-                    right--;
+    // result.add(triplets);
 
-                }else if (sum < 0) {
-                    left++;
-                }else{
-                    right--;
-                }
-            }
-        }
-        return result;
-    }
+    // //remove duplicates
+    // while(left < right && nums[left] == nums[left+1]){
+    // left++;
+    // }
 
-    public static void main(String[] args) {
-        int nums[] = { -1, 0, 1, 2, -1, -4 };
-        System.out.println(threeSum(nums));
+    // //remove duplicates
+    // while (left < right && nums[right] == nums[right - 1]) {
+    // right--;
+    // }
 
-    }
+    // left++;
+    // right--;
+
+    // }else if (sum < 0) {
+    // left++;
+    // }else{
+    // right--;
+    // }
+    // }
+    // }
+    // return result;
+    // }
+
+    // public static void main(String[] args) {
+    // int nums[] = { -1, 0, 1, 2, -1, -4 };
+    // System.out.println(threeSum(nums));
+
+    // }
+
+    // Interleave two half of a queue(even length)
+    // public static Queue<Integer> interLeave(Queue<Integer> q) {
+    // Queue<Integer> q2 = new LinkedList<Integer>();
+    // int size = q.size();
+    // for (int i = 0; i < size / 2; i++) {
+    // q2.add(q.remove());
+    // }
+    // while (!q2.isEmpty()) {
+    // q.add(q2.remove());
+    // q.add(q.remove());
+    // }
+    // return q;
+    // }
+
+    // public static void main(String[] args) {
+    // Queue<Integer> q = new LinkedList<Integer>();
+    // q.add(1);
+    // q.add(2);
+    // q.add(3);
+    // q.add(4);
+    // q.add(5);
+    // q.add(6);
+    // q.add(7);
+    // q.add(8);
+    // q.add(9);
+    // q.add(10);
+
+    // System.out.println(interLeave(q));
+    // }
+
+    // Difference betn queue and stack
+    // public static void main(String[] args) {
+    // Queue<Integer> q = new LinkedList<Integer>();
+    // q.add(1);
+    // q.add(2);
+    // q.add(3);
+    // q.add(4);
+    // q.add(5);
+
+    // System.out.println(q);
+    // q.remove();
+    // System.out.println(q);
+
+    // Stack<Integer> s = new Stack<>();
+    // s.add(1);
+    // s.add(2);
+    // System.out.println(s);
+    // s.pop();
+    // System.out.println(s);
+
+    // }
+
+    // Queue reversal
+
+    // public static Queue<Integer> reversal(Queue<Integer> q) {
+    //   Stack<Integer> s = new Stack<Integer>();
+    //   int size = q.size();
+      
+    //   for(int i = 0; i < size; i++ ){
+    //     s.add(q.remove());
+    //   }
+    //   while (!s.isEmpty()) {
+    //     q.add(s.pop());
+    //   }
+    //   return q;
+    // }
+
+    // public static void main(String[] args) {
+    //     Queue<Integer> q = new LinkedList<Integer>();
+    //     q.add(1);
+    //     q.add(2);
+    //     q.add(3);
+    //     q.add(4);
+    //     q.add(5);
+
+    //     System.out.println(reversal(q));
+    // }
 }
