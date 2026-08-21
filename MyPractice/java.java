@@ -601,26 +601,76 @@ public class java {
     // Queue reversal
 
     // public static Queue<Integer> reversal(Queue<Integer> q) {
-    //   Stack<Integer> s = new Stack<Integer>();
-    //   int size = q.size();
-      
-    //   for(int i = 0; i < size; i++ ){
-    //     s.add(q.remove());
-    //   }
-    //   while (!s.isEmpty()) {
-    //     q.add(s.pop());
-    //   }
-    //   return q;
+    // Stack<Integer> s = new Stack<Integer>();
+    // int size = q.size();
+
+    // for(int i = 0; i < size; i++ ){
+    // s.add(q.remove());
+    // }
+    // while (!s.isEmpty()) {
+    // q.add(s.pop());
+    // }
+    // return q;
     // }
 
     // public static void main(String[] args) {
-    //     Queue<Integer> q = new LinkedList<Integer>();
-    //     q.add(1);
-    //     q.add(2);
-    //     q.add(3);
-    //     q.add(4);
-    //     q.add(5);
+    // Queue<Integer> q = new LinkedList<Integer>();
+    // q.add(1);
+    // q.add(2);
+    // q.add(3);
+    // q.add(4);
+    // q.add(5);
 
-    //     System.out.println(reversal(q));
+    // System.out.println(reversal(q));
     // }
+
+    // search in a 2D matrix -- by brute force approach --TC- O(n*m) and SC- O(1)
+
+    // public static boolean SearchInTwoD(int matrix[][], int target) {
+    // for(int i = 0; i < matrix.length; i++){
+    // for(int j = 0; j < matrix[i].length; j++){
+    // if (target == matrix[i][j]) {
+    // return true;
+    // }
+    // }
+    // }
+    // return false;
+    // }
+
+    // public static void main(String[] args) {
+    // int matrix[][] = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 60 } };
+    // int target = 26;
+    // System.out.println(SearchInTwoD(matrix, target));
+    // }
+
+    // search in 2D matrix by optimized method -TC = O(log(n*m)) SC = O(1)
+
+    // public static boolean SearchInTwoD(int matrix[][], int target){
+    //     int n = matrix.length;
+    //     int m = matrix[0].length;
+
+    //     int left = 0;
+    //     int right = n * m - 1;
+
+    //     while (left <= right) {
+    //         int mid = left + (right - left) / 2;
+    //         int row = mid / m;
+    //         int col = mid % m;
+
+    //         if (matrix[row][col] == target) {
+    //             return true;
+    //         }else if (matrix[row][col] < target) {
+    //             left = mid + 1;
+    //         }else{
+    //             right = mid - 1;
+    //         }
+    //     }
+    //     return false;
+    // }
+    // public static void main(String[] args) {
+    //     int matrix[][] = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 60 } };
+    //     int target = 26;
+    //     System.out.println(SearchInTwoD(matrix, target));
+    // }
+
 }
