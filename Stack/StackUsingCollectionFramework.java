@@ -88,7 +88,7 @@ public class StackUsingCollectionFramework {
     
     //     }
     // }
-    //Valid parenthesis
+  //  Valid parenthesis
         // public static boolean isValid(String str){
         // Stack <Character> s = new Stack<>();
 
@@ -118,7 +118,7 @@ public class StackUsingCollectionFramework {
         // }
         // //Valid parenthesis
         // public static void main(String[] args) {
-        //     String str = "[())]";//true
+        //     String str = "[((()))]";//true
         //     System.out.println(isValid(str));
 
         // }     
