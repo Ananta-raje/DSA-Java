@@ -1,5 +1,6 @@
 package MyPractice;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -320,7 +321,7 @@ public class java {
     // System.out.println(Arrays.toString(nums1));
     // }
 
-    // 136- single number -- using XOR operator
+    // 13) 136- single number -- using XOR operator
     // public static int singleNumber(int nums[]) {
     // int n = nums.length;
     // int ans = 0;
@@ -335,7 +336,7 @@ public class java {
     // System.out.println(singleNumber(nums));
     // }
 
-    // pow(x,n) -- Brute force approach -- o(n)-complexity
+    // 14) pow(x,n) -- Brute force approach -- o(n)-complexity
 
     // public static double pow(double x, long n) {
     // long power = n;
@@ -363,7 +364,7 @@ public class java {
     // System.out.println(pow(x, n));
     // }
 
-    // pow(x,n) - using recursive divide and conquer
+    // 15) pow(x,n) - using recursive divide and conquer
     // public static double myPow(double x, long n){
     // long power = n;
 
@@ -392,7 +393,7 @@ public class java {
     // System.out.println(myPow(x, n));
     // }
 
-    // Maximum Subarray- 53 - using brute force approach - O(n3)- complexity
+    // 16) Maximum Subarray- 53 - using brute force approach - O(n3)- complexity
     // public static int maxSubArray(int arr[]) {
     // int n = arr.length;
     // int max = Integer.MIN_VALUE;
@@ -413,7 +414,8 @@ public class java {
     // System.out.println(maxSubArray(arr));
     // }
 
-    // Maximum Subarray - kadane's algorithm --"Should I start a new subarray with
+    // 17) Maximum Subarray - kadane's algorithm --"Should I start a new subarray
+    // with
     // this element, or should I add this element to my existing subarray?"
     // public static int maxSubArrays(int arr[]){
     // int n = arr.length;
@@ -434,7 +436,7 @@ public class java {
     // System.out.println(maxSubArrays(arr));
     // }
 
-    // Container with the most water
+    // 18) Container with the most water
     // public static int maxArea(int[] height) {
     // int left = 0, right = height.length - 1;
     // int maxArea = 0;
@@ -459,10 +461,10 @@ public class java {
     // System.out.println(maxArea(height));
     // }
 
-    // sort color problem - 75 - using counting approach - easy way -TC - O(n)
+    // 19) sort color problem - 75 - using counting approach - easy way -TC - O(n)
     // SC-O(1)
 
-    // 3 sum problem using brute force approach--TC=O(n3) --- but it can take
+    // 20) 3 sum problem using brute force approach--TC=O(n3) --- but it can take
     // duplicates values
 
     // public static List<List<Integer>> threeSum(int nums[]) {
@@ -491,7 +493,7 @@ public class java {
     // System.out.println(threeSum(nums));
     // }
 
-    // 3sum problem using optimized approach -- that remove duplicates
+    // 21) 3sum problem using optimized approach -- that remove duplicates
     // public static List<List<Integer>> threeSum(int nums[]) {
     // List<List<Integer>> result = new ArrayList<List<Integer>>();
 
@@ -546,7 +548,7 @@ public class java {
 
     // }
 
-    // Interleave two half of a queue(even length)
+    // 22) Interleave two half of a queue(even length)
     // public static Queue<Integer> interLeave(Queue<Integer> q) {
     // Queue<Integer> q2 = new LinkedList<Integer>();
     // int size = q.size();
@@ -576,7 +578,7 @@ public class java {
     // System.out.println(interLeave(q));
     // }
 
-    // Difference betn queue and stack
+    // 23) Difference betn queue and stack
     // public static void main(String[] args) {
     // Queue<Integer> q = new LinkedList<Integer>();
     // q.add(1);
@@ -598,7 +600,7 @@ public class java {
 
     // }
 
-    // Queue reversal
+    // 24) Queue reversal
 
     // public static Queue<Integer> reversal(Queue<Integer> q) {
     // Stack<Integer> s = new Stack<Integer>();
@@ -624,7 +626,8 @@ public class java {
     // System.out.println(reversal(q));
     // }
 
-    // search in a 2D matrix -- by brute force approach --TC- O(n*m) and SC- O(1)
+    // 25) search in a 2D matrix -- by brute force approach --TC- O(n*m) and SC-
+    // O(1)
 
     // public static boolean SearchInTwoD(int matrix[][], int target) {
     // for(int i = 0; i < matrix.length; i++){
@@ -643,34 +646,93 @@ public class java {
     // System.out.println(SearchInTwoD(matrix, target));
     // }
 
-    // search in 2D matrix by optimized method -TC = O(log(n*m)) SC = O(1)
+    // 26) search in 2D matrix by optimized method -TC = O(log(n*m)) SC = O(1)
 
     // public static boolean SearchInTwoD(int matrix[][], int target){
-    //     int n = matrix.length;
-    //     int m = matrix[0].length;
+    // int n = matrix.length;
+    // int m = matrix[0].length;
 
-    //     int left = 0;
-    //     int right = n * m - 1;
+    // int left = 0;
+    // int right = n * m - 1;
 
-    //     while (left <= right) {
-    //         int mid = left + (right - left) / 2;
-    //         int row = mid / m;
-    //         int col = mid % m;
+    // while (left <= right) {
+    // int mid = left + (right - left) / 2;
+    // int row = mid / m;
+    // int col = mid % m;
 
-    //         if (matrix[row][col] == target) {
-    //             return true;
-    //         }else if (matrix[row][col] < target) {
-    //             left = mid + 1;
-    //         }else{
-    //             right = mid - 1;
-    //         }
-    //     }
-    //     return false;
+    // if (matrix[row][col] == target) {
+    // return true;
+    // }else if (matrix[row][col] < target) {
+    // left = mid + 1;
+    // }else{
+    // right = mid - 1;
+    // }
+    // }
+    // return false;
     // }
     // public static void main(String[] args) {
-    //     int matrix[][] = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 60 } };
-    //     int target = 26;
-    //     System.out.println(SearchInTwoD(matrix, target));
+    // int matrix[][] = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 60 } };
+    // int target = 26;
+    // System.out.println(SearchInTwoD(matrix, target));
     // }
+
+    // 27) next greater element from an array
+
+    // public static int[] nextGreater(int arr[]) {
+    //     int n = arr.length;
+    //     int ans[] = new int[arr.length];
+    //     Arrays.fill(ans, -1);
+    //     for (int i = 0; i < n; i++) {
+    //         for (int j = i + 1; j < n; j++) {
+    //             if (arr[j] > arr[i]) {
+    //                 ans[i] = arr[j];
+    //                 break;
+    //             }
+
+    //         }
+
+    //     }
+    //     return ans;
+    // }
+
+    // public static void main(String[] args) {
+    //     int arr[] = { 22, 4, 2, 5, 3, 12 };
+    //     System.out.println(Arrays.toString(nextGreater(arr)));
+
+    // }
+
+    //28) Next greater element I - leetcode 496 -- by brute force approach
+
+    // public static int[] nextGreater(int num1[], int num2[]){
+    //     int ans [] = new int[num1.length];
+        
+
+    //     for(int i = 0; i < num1.length; i++){
+    //         int element = num1[i];
+    //         ans[i] = -1;
+    //         for(int j = 0; j < num2.length; j++){
+
+    //             if (num2[j] == element) {
+    //                 for(int k = j + 1; k < num2.length; k++){
+    //                     if (num2[k] > element) {
+    //                         ans[i] = num2[k];
+    //                         break;
+    //                     }
+    //                 }
+    //                 break;
+    //             }
+    //         }
+
+    //     }
+    //     return ans;
+    // }
+    // public static void main(String[] args) {
+    //     int nums1[] = {1, 3, 4};
+    //     int nums2[] = {1, 2, 3, 4, 6};
+
+    //     System.out.println(Arrays.toString(nextGreater(nums1, nums2)));
+
+    // }
+
 
 }
