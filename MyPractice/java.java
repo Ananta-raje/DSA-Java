@@ -679,60 +679,178 @@ public class java {
     // 27) next greater element from an array
 
     // public static int[] nextGreater(int arr[]) {
-    //     int n = arr.length;
-    //     int ans[] = new int[arr.length];
-    //     Arrays.fill(ans, -1);
-    //     for (int i = 0; i < n; i++) {
-    //         for (int j = i + 1; j < n; j++) {
-    //             if (arr[j] > arr[i]) {
-    //                 ans[i] = arr[j];
-    //                 break;
-    //             }
+    // int n = arr.length;
+    // int ans[] = new int[arr.length];
+    // Arrays.fill(ans, -1);
+    // for (int i = 0; i < n; i++) {
+    // for (int j = i + 1; j < n; j++) {
+    // if (arr[j] > arr[i]) {
+    // ans[i] = arr[j];
+    // break;
+    // }
 
-    //         }
+    // }
 
-    //     }
-    //     return ans;
+    // }
+    // return ans;
     // }
 
     // public static void main(String[] args) {
-    //     int arr[] = { 22, 4, 2, 5, 3, 12 };
-    //     System.out.println(Arrays.toString(nextGreater(arr)));
+    // int arr[] = { 22, 4, 2, 5, 3, 12 };
+    // System.out.println(Arrays.toString(nextGreater(arr)));
 
     // }
 
-    //28) Next greater element I - leetcode 496 -- by brute force approach
+    // 28) Next greater element I - leetcode 496 -- by brute force approach
 
     // public static int[] nextGreater(int num1[], int num2[]){
-    //     int ans [] = new int[num1.length];
-        
+    // int ans [] = new int[num1.length];
 
-    //     for(int i = 0; i < num1.length; i++){
-    //         int element = num1[i];
-    //         ans[i] = -1;
-    //         for(int j = 0; j < num2.length; j++){
+    // for(int i = 0; i < num1.length; i++){
+    // int element = num1[i];
+    // ans[i] = -1;
+    // for(int j = 0; j < num2.length; j++){
 
-    //             if (num2[j] == element) {
-    //                 for(int k = j + 1; k < num2.length; k++){
-    //                     if (num2[k] > element) {
-    //                         ans[i] = num2[k];
-    //                         break;
-    //                     }
-    //                 }
-    //                 break;
-    //             }
-    //         }
+    // if (num2[j] == element) {
+    // for(int k = j + 1; k < num2.length; k++){
+    // if (num2[k] > element) {
+    // ans[i] = num2[k];
+    // break;
+    // }
+    // }
+    // break;
+    // }
+    // }
 
-    //     }
-    //     return ans;
+    // }
+    // return ans;
     // }
     // public static void main(String[] args) {
-    //     int nums1[] = {1, 3, 4};
-    //     int nums2[] = {1, 2, 3, 4, 6};
+    // int nums1[] = {1, 3, 4};
+    // int nums2[] = {1, 2, 3, 4, 6};
 
-    //     System.out.println(Arrays.toString(nextGreater(nums1, nums2)));
+    // System.out.println(Arrays.toString(nextGreater(nums1, nums2)));
 
     // }
 
+    // Sunday leetcode revision - 23-08-2026
+    // 29)print Squares of a sorted array - 977 - Brute force approach - TC= O(n log
+    // n)
+
+    // public static int[] sortedArrays(int arr[]){
+    // int n = arr.length;
+    // int result[] = new int[arr.length];
+    // for(int i = 0; i < n; i++){
+    // result[i] = arr[i] * arr[i];
+    // }
+    // Arrays.sort(result);
+    // return result;
+
+    // }
+    // public static void main(String[] args) {
+    // int arr[] = {9,2,4,15,25,6};
+    // System.out.println(Arrays.toString(sortedArrays(arr)));
+
+    // }
+
+    // 30) print Squares of a sorted array - 977 - Optimized approach - Two pointer-
+    // TC = O(n) & SP = O(n)
+
+    // public static int [] sortedArrays(int arr[]){
+    // int n = arr.length;
+    // int ans[] = new int[n];
+
+    // int left = 0;
+    // int right = n - 1;
+
+    // for(int i = n - 1; i >= 0; i--){
+
+    // if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+    // ans[i] = arr[left] * arr[left];
+    // left++;
+    // }else{
+    // ans[i] = arr[right] * arr[right];
+    // right--;
+    // }
+
+    // }
+    // return ans;
+    // }
+    // public static void main(String[] args) {
+    // int arr[] = {-7, -3, -1, 2, 5, 8};
+    // System.out.println(Arrays.toString(sortedArrays(arr)));
+
+    // }
+
+    // 31) Majority element( majority element is the element that appears more than
+    // n/2 times) --Leetcode 169 -- brute force approach-TCO(n2)
+
+    // public static int majElement(int arr[]){
+    // int n = arr.length;
+
+    // for(int i = 0; i < n; i++){
+    // int count = 0;
+    // for(int j = 0; j < n; j++){
+    // if (arr[i] == arr[j]) {
+    // count++;
+    // }
+
+    // if (count > n / 2) {
+    // return arr[i];
+    // }
+    // }
+    // }
+    // return -1;
+    // }
+    // public static void main(String[] args) {
+    // int arr[] = {3, 2, 1, 1, 1};
+    // System.out.println(majElement(arr));
+
+    // }
+
+    // 32) Majority element( majority element is the element that appears more than
+    // n/2 times) --Leetcode 169 -- Boyer-Moore Voting Algorithm- TC O(n)
+    // public static int majElement(int[] nums) {
+
+    // int candidate = 0;
+    // int count = 0;
+
+    // for (int num : nums) {
+
+    // if (count == 0) {
+    // candidate = num;
+    // }
+
+    // if (num == candidate) {
+    // count++;
+    // } else {
+    // count--;
+    // }
+    // }
+
+    // return candidate;
+    // }
+
+    // public static void main(String[] args) {
+    // int nums[] = { 3, 2, 1, 1, 1 };
+    // System.out.println(majElement(nums));
+
+    // }
+
+    // 33) Majority element -- Another approach -- but this is the worst case -
+    //  TC = O(n log n)
+   
+
+    public static int majElement(int nums[]) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        return nums[n / 2];
+    }
+
+    public static void main(String[] args) {
+        int nums[] = { 3, 2, 1, 1, 1 };
+        System.out.println(majElement(nums));
+
+    }
 
 }
