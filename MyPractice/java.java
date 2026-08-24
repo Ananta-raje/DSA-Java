@@ -884,5 +884,37 @@ public class java {
 
     //     System.out.println(reverseFirstK(q, k));
     // }
+
+    //35) Time to buy a tickets
+    // public static int timeToBuy(int tickets[], int k){
+    //     Queue<Integer> q = new LinkedList<Integer>();
+    //     for(int  i= 0; i < tickets.length ; i++){
+    //         q.add(i);
+    //     }
+    //     int time = 0;
+    //     while (!q.isEmpty()) {
+    //         int person = q.remove();
+
+    //         tickets[person]--;
+    //         time++;
+
+    //         if (person == k && tickets[person] == 0) {
+    //             return time;
+    //         }
+
+    //         if (tickets[person] > 0) {
+    //             q.add(person);
+    //         }
+
+    //     }
+    //     return time;
+
+    // }
+    // public static void main(String[] args) {
+    //     int tickets[] = {2,3,2};
+    //     int  k= 2;
+    //     System.out.println(timeToBuy(tickets, k)+ " seconds");
+
+    // }
  
 }
