@@ -838,19 +838,51 @@ public class java {
     // }
 
     // 33) Majority element -- Another approach -- but this is the worst case -
-    //  TC = O(n log n)
-   
+    // TC = O(n log n)
 
-    public static int majElement(int nums[]) {
-        int n = nums.length;
-        Arrays.sort(nums);
-        return nums[n / 2];
-    }
+    // public static int majElement(int nums[]) {
+    // int n = nums.length;
+    // Arrays.sort(nums);
+    // return nums[n / 2];
+    // }
 
-    public static void main(String[] args) {
-        int nums[] = { 3, 2, 1, 1, 1 };
-        System.out.println(majElement(nums));
+    // public static void main(String[] args) {
+    // int nums[] = { 3, 2, 1, 1, 1 };
+    // System.out.println(majElement(nums));
 
-    }
+    // }
 
+    // 34)Reverse first k element of queue
+    // public static Queue<Integer> reverseFirstK(Queue<Integer> q, int k) {
+
+    //     Stack<Integer> s = new Stack<Integer>();
+
+    //     for (int i = 0; i < k; i++) {
+    //         s.add(q.remove());
+    //     }
+    //     while (!s.isEmpty()) {
+    //         q.add(s.pop());
+    //     }
+
+    //     int remaining = q.size() - k;
+    //     for (int i = 0; i < remaining; i++) {
+    //         q.add(q.remove());
+    //     }
+    //     return q;
+    // }
+
+    // public static void main(String[] args) {
+    //     Queue<Integer> q = new LinkedList<Integer>();
+    //     int k = 3;
+    //     q.add(7);
+    //     q.add(7);
+    //     q.add(5);
+    //     q.add(6);
+    //     q.add(5);
+    //     q.add(10);
+    //     q.add(8);
+
+    //     System.out.println(reverseFirstK(q, k));
+    // }
+ 
 }
