@@ -701,7 +701,7 @@ public class java {
 
     // }
 
-    // 28) Next greater element I - leetcode 496 -- by brute force approach
+    // 28) Next greater element I - leetcode 496 -- by brute force approach --
 
     // public static int[] nextGreater(int num1[], int num2[]){
     // int ans [] = new int[num1.length];
@@ -731,6 +731,45 @@ public class java {
 
     // System.out.println(Arrays.toString(nextGreater(nums1, nums2)));
 
+    // }
+
+    // Next greater element --O(n) -- monotonic solution -O(N)
+
+    // public static int[] nextGreater(int nums2[]) {
+    //     Stack<Integer> helperStack = new Stack<Integer>();
+    //     int ans[] = new int[nums2.length];
+    //     for (int i = nums2.length - 1; i >= 0; i--) {
+    //         int element = nums2[i];
+    //         if (helperStack.isEmpty()) {
+    //             helperStack.push(element);
+    //             ans[i] = -1;
+    //             continue;
+    //         }
+
+    //         if (helperStack.peek() > element) {
+    //             ans[i] = helperStack.peek();
+    //             helperStack.push(element);
+    //             continue;
+    //         }
+
+    //         while (!helperStack.isEmpty() && helperStack.peek() <= element) {
+    //             helperStack.pop();
+    //         }
+
+    //         if (helperStack.isEmpty()) {
+    //             ans[i] = -1;
+    //         } else {
+    //             ans[i] = helperStack.peek();
+    //         }
+
+    //         helperStack.push(element);
+    //     }
+    //     return ans;
+    // }
+
+    // public static void main(String[] args) {
+    //     int nums2[] = { 1, 3, 4, 1, 2 };
+    //     System.out.println(Arrays.toString(nextGreater(nums2)));
     // }
 
     // Sunday leetcode revision - 23-08-2026
@@ -855,66 +894,110 @@ public class java {
     // 34)Reverse first k element of queue
     // public static Queue<Integer> reverseFirstK(Queue<Integer> q, int k) {
 
-    //     Stack<Integer> s = new Stack<Integer>();
+    // Stack<Integer> s = new Stack<Integer>();
 
-    //     for (int i = 0; i < k; i++) {
-    //         s.add(q.remove());
-    //     }
-    //     while (!s.isEmpty()) {
-    //         q.add(s.pop());
-    //     }
+    // for (int i = 0; i < k; i++) {
+    // s.add(q.remove());
+    // }
+    // while (!s.isEmpty()) {
+    // q.add(s.pop());
+    // }
 
-    //     int remaining = q.size() - k;
-    //     for (int i = 0; i < remaining; i++) {
-    //         q.add(q.remove());
-    //     }
-    //     return q;
+    // int remaining = q.size() - k;
+    // for (int i = 0; i < remaining; i++) {
+    // q.add(q.remove());
+    // }
+    // return q;
     // }
 
     // public static void main(String[] args) {
-    //     Queue<Integer> q = new LinkedList<Integer>();
-    //     int k = 3;
-    //     q.add(7);
-    //     q.add(7);
-    //     q.add(5);
-    //     q.add(6);
-    //     q.add(5);
-    //     q.add(10);
-    //     q.add(8);
+    // Queue<Integer> q = new LinkedList<Integer>();
+    // int k = 3;
+    // q.add(7);
+    // q.add(7);
+    // q.add(5);
+    // q.add(6);
+    // q.add(5);
+    // q.add(10);
+    // q.add(8);
 
-    //     System.out.println(reverseFirstK(q, k));
+    // System.out.println(reverseFirstK(q, k));
     // }
 
-    //35) Time to buy a tickets
+    // 35) Time to buy a tickets
     // public static int timeToBuy(int tickets[], int k){
-    //     Queue<Integer> q = new LinkedList<Integer>();
-    //     for(int  i= 0; i < tickets.length ; i++){
-    //         q.add(i);
-    //     }
-    //     int time = 0;
-    //     while (!q.isEmpty()) {
-    //         int person = q.remove();
+    // Queue<Integer> q = new LinkedList<Integer>();
+    // for(int i= 0; i < tickets.length ; i++){
+    // q.add(i);
+    // }
+    // int time = 0;
+    // while (!q.isEmpty()) {
+    // int person = q.remove();
 
-    //         tickets[person]--;
-    //         time++;
+    // tickets[person]--;
+    // time++;
 
-    //         if (person == k && tickets[person] == 0) {
-    //             return time;
-    //         }
+    // if (person == k && tickets[person] == 0) {
+    // return time;
+    // }
 
-    //         if (tickets[person] > 0) {
-    //             q.add(person);
-    //         }
+    // if (tickets[person] > 0) {
+    // q.add(person);
+    // }
 
-    //     }
-    //     return time;
+    // }
+    // return time;
 
     // }
     // public static void main(String[] args) {
-    //     int tickets[] = {2,3,2};
-    //     int  k= 2;
-    //     System.out.println(timeToBuy(tickets, k)+ " seconds");
+    // int tickets[] = {2,3,2};
+    // int k= 2;
+    // System.out.println(timeToBuy(tickets, k)+ " seconds");
 
     // }
- 
+    //36)Next greater element  -- using brute force approach
+
+    // public static int[] nextGreater(int nums[]){
+    //     int ans[] = new int[nums.length];
+
+    //     for(int i = 0; i < nums.length; i++){
+    //         ans[i] = -1;
+
+    //         for(int j = i+1; j < nums.length; j++){
+    //             if (nums[j] > nums[i]) {
+    //                 ans[i] = nums[j];
+    //                 break; 
+    //             }
+    //         }
+    //     }
+    //     return ans;
+    // }
+    // public static void main(String[] args) {
+    //     int nums [] = {1,2,1};
+    //     System.out.println(Arrays.toString(nextGreater(nums)));
+
+    // }
+
+    // 37) Next greater element -II --circuloar array -- using brute force approach
+    // public static int[] nextGreater(int nums[]){
+    //     int ans[] = new int[nums.length];
+
+    //     for(int i = 0; i < nums.length; i++){
+    //         ans[i] = -1;
+
+    //         for(int j = 1; j < nums.length; j++){
+    //             int index = (i + j) % nums.length;
+    //             if (nums[index] > nums[i]) {
+    //                 ans[i] = nums[index];
+    //                 break; 
+    //             }
+    //         }
+    //     }
+    //     return ans;
+    // }
+    // public static void main(String[] args) {
+    //     int nums [] = {1,2,1};
+    //     System.out.println(Arrays.toString(nextGreater(nums)));
+
+    // }
 }
