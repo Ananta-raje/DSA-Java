@@ -736,40 +736,40 @@ public class java {
     // Next greater element --O(n) -- monotonic solution -O(N)
 
     // public static int[] nextGreater(int nums2[]) {
-    //     Stack<Integer> helperStack = new Stack<Integer>();
-    //     int ans[] = new int[nums2.length];
-    //     for (int i = nums2.length - 1; i >= 0; i--) {
-    //         int element = nums2[i];
-    //         if (helperStack.isEmpty()) {
-    //             helperStack.push(element);
-    //             ans[i] = -1;
-    //             continue;
-    //         }
+    // Stack<Integer> helperStack = new Stack<Integer>();
+    // int ans[] = new int[nums2.length];
+    // for (int i = nums2.length - 1; i >= 0; i--) {
+    // int element = nums2[i];
+    // if (helperStack.isEmpty()) {
+    // helperStack.push(element);
+    // ans[i] = -1;
+    // continue;
+    // }
 
-    //         if (helperStack.peek() > element) {
-    //             ans[i] = helperStack.peek();
-    //             helperStack.push(element);
-    //             continue;
-    //         }
+    // if (helperStack.peek() > element) {
+    // ans[i] = helperStack.peek();
+    // helperStack.push(element);
+    // continue;
+    // }
 
-    //         while (!helperStack.isEmpty() && helperStack.peek() <= element) {
-    //             helperStack.pop();
-    //         }
+    // while (!helperStack.isEmpty() && helperStack.peek() <= element) {
+    // helperStack.pop();
+    // }
 
-    //         if (helperStack.isEmpty()) {
-    //             ans[i] = -1;
-    //         } else {
-    //             ans[i] = helperStack.peek();
-    //         }
+    // if (helperStack.isEmpty()) {
+    // ans[i] = -1;
+    // } else {
+    // ans[i] = helperStack.peek();
+    // }
 
-    //         helperStack.push(element);
-    //     }
-    //     return ans;
+    // helperStack.push(element);
+    // }
+    // return ans;
     // }
 
     // public static void main(String[] args) {
-    //     int nums2[] = { 1, 3, 4, 1, 2 };
-    //     System.out.println(Arrays.toString(nextGreater(nums2)));
+    // int nums2[] = { 1, 3, 4, 1, 2 };
+    // System.out.println(Arrays.toString(nextGreater(nums2)));
     // }
 
     // Sunday leetcode revision - 23-08-2026
@@ -955,49 +955,99 @@ public class java {
     // System.out.println(timeToBuy(tickets, k)+ " seconds");
 
     // }
-    //36)Next greater element  -- using brute force approach
+    // 36)Next greater element -- using brute force approach
 
     // public static int[] nextGreater(int nums[]){
-    //     int ans[] = new int[nums.length];
+    // int ans[] = new int[nums.length];
 
-    //     for(int i = 0; i < nums.length; i++){
-    //         ans[i] = -1;
+    // for(int i = 0; i < nums.length; i++){
+    // ans[i] = -1;
 
-    //         for(int j = i+1; j < nums.length; j++){
-    //             if (nums[j] > nums[i]) {
-    //                 ans[i] = nums[j];
-    //                 break; 
-    //             }
-    //         }
-    //     }
-    //     return ans;
+    // for(int j = i+1; j < nums.length; j++){
+    // if (nums[j] > nums[i]) {
+    // ans[i] = nums[j];
+    // break;
+    // }
+    // }
+    // }
+    // return ans;
     // }
     // public static void main(String[] args) {
-    //     int nums [] = {1,2,1};
-    //     System.out.println(Arrays.toString(nextGreater(nums)));
+    // int nums [] = {1,2,1};
+    // System.out.println(Arrays.toString(nextGreater(nums)));
 
     // }
 
     // 37) Next greater element -II --circuloar array -- using brute force approach
     // public static int[] nextGreater(int nums[]){
-    //     int ans[] = new int[nums.length];
+    // int ans[] = new int[nums.length];
 
-    //     for(int i = 0; i < nums.length; i++){
-    //         ans[i] = -1;
+    // for(int i = 0; i < nums.length; i++){
+    // ans[i] = -1;
 
-    //         for(int j = 1; j < nums.length; j++){
-    //             int index = (i + j) % nums.length;
-    //             if (nums[index] > nums[i]) {
-    //                 ans[i] = nums[index];
-    //                 break; 
-    //             }
-    //         }
-    //     }
-    //     return ans;
+    // for(int j = 1; j < nums.length; j++){
+    // int index = (i + j) % nums.length;
+    // if (nums[index] > nums[i]) {
+    // ans[i] = nums[index];
+    // break;
+    // }
+    // }
+    // }
+    // return ans;
     // }
     // public static void main(String[] args) {
-    //     int nums [] = {1,2,1};
-    //     System.out.println(Arrays.toString(nextGreater(nums)));
+    // int nums [] = {1,2,1};
+    // System.out.println(Arrays.toString(nextGreater(nums)));
 
     // }
-}
+    // 38)Stock span
+
+    static class StockSpanner {
+
+            Stack<int[]> stack;
+
+            public StockSpanner() {
+                stack = new Stack<>();
+            }
+
+            public int next(int price) {
+
+                int span = 1;
+
+                // Remove all previous prices <= current price
+                while (!stack.isEmpty() && stack.peek()[0] <= price) {
+                    span += stack.pop()[1];
+                }
+
+                // Store {price, span}
+                stack.push(new int[] { price, span });
+
+                return span;
+            }
+        
+        }
+
+        public static void main(String[] args) {
+
+            Scanner sc = new Scanner(System.in);
+
+            System.out.print("Enter number of days: ");
+            int n = sc.nextInt();
+
+            StockSpanner spanner = new StockSpanner();
+
+            System.out.println("Enter stock prices:");
+
+            for (int i = 0; i < n; i++) {
+
+                int price = sc.nextInt();
+
+                int span = spanner.next(price);
+
+                System.out.println(
+                        "Price = " + price + " , Span = " + span);
+            }
+
+            sc.close();
+        }
+    }
