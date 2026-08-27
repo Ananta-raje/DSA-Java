@@ -1002,52 +1002,52 @@ public class java {
     // }
     // 38)Stock span
 
-    static class StockSpanner {
+    // static class StockSpanner {
 
-            Stack<int[]> stack;
+    //         Stack<int[]> stack;
 
-            public StockSpanner() {
-                stack = new Stack<>();
-            }
+    //         public StockSpanner() {
+    //             stack = new Stack<>();
+    //         }
 
-            public int next(int price) {
+    //         public int next(int price) {
 
-                int span = 1;
+    //             int span = 1;
 
-                // Remove all previous prices <= current price
-                while (!stack.isEmpty() && stack.peek()[0] <= price) {
-                    span += stack.pop()[1];
-                }
+    //             // Remove all previous prices <= current price
+    //             while (!stack.isEmpty() && stack.peek()[0] <= price) {
+    //                 span += stack.pop()[1];
+    //             }
 
-                // Store {price, span}
-                stack.push(new int[] { price, span });
+    //             // Store {price, span}
+    //             stack.push(new int[] { price, span });
 
-                return span;
-            }
+    //             return span;
+    //         }
         
-        }
+    //     }
 
-        public static void main(String[] args) {
+    //     public static void main(String[] args) {
 
-            Scanner sc = new Scanner(System.in);
+    //         Scanner sc = new Scanner(System.in);
 
-            System.out.print("Enter number of days: ");
-            int n = sc.nextInt();
+    //         System.out.print("Enter number of days: ");
+    //         int n = sc.nextInt();
 
-            StockSpanner spanner = new StockSpanner();
+    //         StockSpanner spanner = new StockSpanner();
 
-            System.out.println("Enter stock prices:");
+    //         System.out.println("Enter stock prices:");
 
-            for (int i = 0; i < n; i++) {
+    //         for (int i = 0; i < n; i++) {
 
-                int price = sc.nextInt();
+    //             int price = sc.nextInt();
 
-                int span = spanner.next(price);
+    //             int span = spanner.next(price);
 
-                System.out.println(
-                        "Price = " + price + " , Span = " + span);
-            }
+    //             System.out.println(
+    //                     "Price = " + price + " , Span = " + span);
+    //         }
 
-            sc.close();
-        }
+    //         sc.close();
+    //     }
     }
