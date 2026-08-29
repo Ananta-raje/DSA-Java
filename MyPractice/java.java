@@ -3,6 +3,7 @@ package MyPractice;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -1004,50 +1005,100 @@ public class java {
 
     // static class StockSpanner {
 
-    //         Stack<int[]> stack;
+    // Stack<int[]> stack;
 
-    //         public StockSpanner() {
-    //             stack = new Stack<>();
+    // public StockSpanner() {
+    // stack = new Stack<>();
+    // }
+
+    // public int next(int price) {
+
+    // int span = 1;
+
+    // // Remove all previous prices <= current price
+    // while (!stack.isEmpty() && stack.peek()[0] <= price) {
+    // span += stack.pop()[1];
+    // }
+
+    // // Store {price, span}
+    // stack.push(new int[] { price, span });
+
+    // return span;
+    // }
+
+    // }
+
+    // public static void main(String[] args) {
+
+    // Scanner sc = new Scanner(System.in);
+
+    // System.out.print("Enter number of days: ");
+    // int n = sc.nextInt();
+
+    // StockSpanner spanner = new StockSpanner();
+
+    // System.out.println("Enter stock prices:");
+
+    // for (int i = 0; i < n; i++) {
+
+    // int price = sc.nextInt();
+
+    // int span = spanner.next(price);
+
+    // System.out.println(
+    // "Price = " + price + " , Span = " + span);
+    // }
+
+    // sc.close();
+    // }
+
+    // // 39)TWO sum problem -- optimized approach -O(n) TC
+    // public static int[] twoSum(int arr[], int target) {
+    //     int n = arr.length;
+    //     HashMap<Integer, Integer> map = new HashMap<>();
+
+    //     for (int i = 0; i < n; i++) {
+    //         int complement = target - arr[i];
+    //         if (map.containsKey(complement)) {
+    //             return new int[] { map.get(complement), i };
     //         }
 
-    //         public int next(int price) {
-
-    //             int span = 1;
-
-    //             // Remove all previous prices <= current price
-    //             while (!stack.isEmpty() && stack.peek()[0] <= price) {
-    //                 span += stack.pop()[1];
-    //             }
-
-    //             // Store {price, span}
-    //             stack.push(new int[] { price, span });
-
-    //             return span;
-    //         }
-        
+    //         map.put(arr[i], i);
     //     }
 
-    //     public static void main(String[] args) {
+    //     return new int[] {};
+    // }
 
-    //         Scanner sc = new Scanner(System.in);
+    // public static void main(String[] args) {
+    //     int arr[] = { 2, 7, 11, 15 };
+    //     int target = 9;
+    //     System.out.println(Arrays.toString(twoSum(arr, target)));
+    // }
 
-    //         System.out.print("Enter number of days: ");
-    //         int n = sc.nextInt();
-
-    //         StockSpanner spanner = new StockSpanner();
-
-    //         System.out.println("Enter stock prices:");
-
-    //         for (int i = 0; i < n; i++) {
-
-    //             int price = sc.nextInt();
-
-    //             int span = spanner.next(price);
-
-    //             System.out.println(
-    //                     "Price = " + price + " , Span = " + span);
+    //40) check palidrome problem 
+     
+    // private static boolean checkPalindrome(String str){
+    //     int left = 0;
+    //     int right = str.length() - 1;
+    //     while(left < right){
+    //         if(str.charAt(left) != str.charAt(right)){
+    //             return false;
     //         }
-
-    //         sc.close();
+    //         left++;
+    //         right--;
     //     }
-    }
+    //     return true;
+    // }
+    // public static boolean isPalindrome(int x) {
+    //     if(x < 0){
+    //         return false;
+    //     }
+    //     String str = x + "";
+    //     return checkPalindrome(str);
+    // }
+
+    // public static void main(String[] args) {
+    //     int x = 121;
+    //     System.out.println(isPalindrome(x));
+    // }
+}
