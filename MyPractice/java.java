@@ -1101,4 +1101,29 @@ public class java {
     //     int x = 121;
     //     System.out.println(isPalindrome(x));
     // }
+
+    //41)Search insert element-bineary search
+    public static int search(int nums[], int target){
+        int mid ;
+        int left = 0;
+        int right = nums.length - 1;
+        while(left <= right){
+            mid = left + (right - left)/2;
+            if(nums[mid] == target){
+                return mid;
+            }else if(target < nums[mid]){
+                right = mid - 1;
+            }else{
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+     public static void main(String[] args) {
+        int nums[] = {1, 2, 4, 6, 8};
+        int target = 3;
+        System.out.println(search(nums,target));
+     }
+
+     
 }
