@@ -1127,16 +1127,63 @@ public class java {
 
     //42)Length of last word
 
-    public static int lengthOfLastWord(String s) {
-        String words[] = s.split(" ");
-        String lastWord = words[words.length - 1];
-        int length = lastWord.length();
-        return length;
-    }
-    public static void main(String[] args) {
-        String s = "Hello World";
-        System.out.println(lengthOfLastWord(s));
-    }
+    // public static int lengthOfLastWord(String s) {
+    //     String words[] = s.split(" ");
+    //     String lastWord = words[words.length - 1];
+    //     int length = lastWord.length();
+    //     return length;
+    // }
+    // public static void main(String[] args) {
+    //     String s = "Hello World";
+    //     System.out.println(lengthOfLastWord(s));
+    // }
 
+    //43)Valid palindrome
+        // public static boolean checkPalindrome(String s){
+        //     int left = 0;
+        //     int right = s.length() - 1;
+        //     while (left < right) {
+        //         if (s.charAt(left) != s.charAt(right)) {
+        //             return false;
+        //         }
+        //         left++;
+        //         right--;
+        //     }
+        //     return true;
+        // }
+
+        // public static boolean validPalindrome(String s){
+        //     StringBuilder sb = new StringBuilder();
+        //     for(int i = 0; i < s.length(); i++){
+        //         char ch = s.charAt(i);
+        //         if (Character.isLetter(ch) || Character.isDigit(ch)) {
+        //             sb.append(ch);
+        //         }
+        //     }
+
+        //     String result = sb.toString();
+        //     result = result.toLowerCase();
+        //     if (checkPalindrome(result)) {
+        //         return true;
+        //     }
+        //     return false;
+        // }
+        // public static void main(String[] args) {
+        //     String s = "A man, a plan, a canal: Panama";
+        //     System.out.println(validPalindrome(s));
+
+        // }
+   //43)Single number -- O(n) & O(1)
+    //    public static int singleElement(int nums[]){
+    //     int result = 0;
+    //     for (int num : nums) {
+    //         result = result ^ num;
+    //     }
+    //     return result;
+    //    }
+    //    public static void main(String[] args) {
+    //     int nums[] = {2, 2, 1};
+    //     System.out.println(singleElement(nums));
+    //    }
      
 }
