@@ -1185,5 +1185,42 @@ public class java {
     //     int nums[] = {2, 2, 1};
     //     System.out.println(singleElement(nums));
     //    }
-     
+
+    //44)Contains duplicate 
+
+    // public static boolean conDuplicate(int nums[]){
+    //     HashSet<Integer> set = new HashSet<Integer>();
+
+    //     for(int num:nums){
+    //         if (set.contains(num)) {
+    //             return true;
+    //         }
+    //         set.add(num);
+    //     }
+
+    //     return false;
+    // }
+    // public static void main(String[] args) {
+    //     int nums[] = {1,1,1,3,3,4,3,2,4,2};
+    //     System.out.println(conDuplicate(nums));
+    // }
+    //45)Contains duplicate -II , abs(i - j) <= k
+      public static boolean conDuplicate(int nums[], int k){
+        HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
+        for(int i = 0; i < nums.length; i++){
+            if (map.containsKey(nums[i])) {
+                int diff = Math.abs(map.get(nums[i]) - i);
+                if (diff <= k) {
+                    return true;
+                }
+            }
+            map.put(nums[i], i);
+        }
+        return false;
+      }
+      public static void main(String[] args) {
+        int nums[] = {1,2,3,1,2,3};
+        int k = 2;
+        System.out.println(conDuplicate(nums, k));
+    }
 }
