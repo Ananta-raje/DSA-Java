@@ -11,6 +11,8 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+//import MyPractice.java.ListNode;
+
 public class java {
 
     // 1. Write a Java method to compute the average of three numbers.
@@ -1054,173 +1056,258 @@ public class java {
 
     // // 39)TWO sum problem -- optimized approach -O(n) TC
     // public static int[] twoSum(int arr[], int target) {
-    //     int n = arr.length;
-    //     HashMap<Integer, Integer> map = new HashMap<>();
+    // int n = arr.length;
+    // HashMap<Integer, Integer> map = new HashMap<>();
 
-    //     for (int i = 0; i < n; i++) {
-    //         int complement = target - arr[i];
-    //         if (map.containsKey(complement)) {
-    //             return new int[] { map.get(complement), i };
-    //         }
+    // for (int i = 0; i < n; i++) {
+    // int complement = target - arr[i];
+    // if (map.containsKey(complement)) {
+    // return new int[] { map.get(complement), i };
+    // }
 
-    //         map.put(arr[i], i);
-    //     }
+    // map.put(arr[i], i);
+    // }
 
-    //     return new int[] {};
+    // return new int[] {};
     // }
 
     // public static void main(String[] args) {
-    //     int arr[] = { 2, 7, 11, 15 };
-    //     int target = 9;
-    //     System.out.println(Arrays.toString(twoSum(arr, target)));
+    // int arr[] = { 2, 7, 11, 15 };
+    // int target = 9;
+    // System.out.println(Arrays.toString(twoSum(arr, target)));
     // }
 
-    //40) check palidrome problem 
-     
+    // 40) check palidrome problem
+
     // private static boolean checkPalindrome(String str){
-    //     int left = 0;
-    //     int right = str.length() - 1;
-    //     while(left < right){
-    //         if(str.charAt(left) != str.charAt(right)){
-    //             return false;
-    //         }
-    //         left++;
-    //         right--;
-    //     }
-    //     return true;
+    // int left = 0;
+    // int right = str.length() - 1;
+    // while(left < right){
+    // if(str.charAt(left) != str.charAt(right)){
+    // return false;
+    // }
+    // left++;
+    // right--;
+    // }
+    // return true;
     // }
     // public static boolean isPalindrome(int x) {
-    //     if(x < 0){
-    //         return false;
-    //     }
-    //     String str = x + "";
-    //     return checkPalindrome(str);
+    // if(x < 0){
+    // return false;
+    // }
+    // String str = x + "";
+    // return checkPalindrome(str);
     // }
 
     // public static void main(String[] args) {
-    //     int x = 121;
-    //     System.out.println(isPalindrome(x));
+    // int x = 121;
+    // System.out.println(isPalindrome(x));
     // }
 
     // //41)Search insert element-bineary search
     // public static int search(int nums[], int target){
-    //     int mid ;
-    //     int left = 0;
-    //     int right = nums.length - 1;
-    //     while(left <= right){
-    //         mid = left + (right - left)/2;
-    //         if(nums[mid] == target){
-    //             return mid;
-    //         }else if(target < nums[mid]){
-    //             right = mid - 1;
-    //         }else{
-    //             left = mid + 1;
-    //         }
-    //     }
-    //     return left;
+    // int mid ;
+    // int left = 0;
+    // int right = nums.length - 1;
+    // while(left <= right){
+    // mid = left + (right - left)/2;
+    // if(nums[mid] == target){
+    // return mid;
+    // }else if(target < nums[mid]){
+    // right = mid - 1;
+    // }else{
+    // left = mid + 1;
     // }
-    //  public static void main(String[] args) {
-    //     int nums[] = {1, 2, 4, 6, 8};
-    //     int target = 3;
-    //     System.out.println(search(nums,target));
-    //  }
-
-    //42)Length of last word
-
-    // public static int lengthOfLastWord(String s) {
-    //     String words[] = s.split(" ");
-    //     String lastWord = words[words.length - 1];
-    //     int length = lastWord.length();
-    //     return length;
+    // }
+    // return left;
     // }
     // public static void main(String[] args) {
-    //     String s = "Hello World";
-    //     System.out.println(lengthOfLastWord(s));
+    // int nums[] = {1, 2, 4, 6, 8};
+    // int target = 3;
+    // System.out.println(search(nums,target));
     // }
 
-    //43)Valid palindrome
-        // public static boolean checkPalindrome(String s){
-        //     int left = 0;
-        //     int right = s.length() - 1;
-        //     while (left < right) {
-        //         if (s.charAt(left) != s.charAt(right)) {
+    // 42)Length of last word
+
+    // public static int lengthOfLastWord(String s) {
+    // String words[] = s.split(" ");
+    // String lastWord = words[words.length - 1];
+    // int length = lastWord.length();
+    // return length;
+    // }
+    // public static void main(String[] args) {
+    // String s = "Hello World";
+    // System.out.println(lengthOfLastWord(s));
+    // }
+
+    // 43)Valid palindrome
+    // public static boolean checkPalindrome(String s){
+    // int left = 0;
+    // int right = s.length() - 1;
+    // while (left < right) {
+    // if (s.charAt(left) != s.charAt(right)) {
+    // return false;
+    // }
+    // left++;
+    // right--;
+    // }
+    // return true;
+    // }
+
+    // public static boolean validPalindrome(String s){
+    // StringBuilder sb = new StringBuilder();
+    // for(int i = 0; i < s.length(); i++){
+    // char ch = s.charAt(i);
+    // if (Character.isLetter(ch) || Character.isDigit(ch)) {
+    // sb.append(ch);
+    // }
+    // }
+
+    // String result = sb.toString();
+    // result = result.toLowerCase();
+    // if (checkPalindrome(result)) {
+    // return true;
+    // }
+    // return false;
+    // }
+    // public static void main(String[] args) {
+    // String s = "A man, a plan, a canal: Panama";
+    // System.out.println(validPalindrome(s));
+
+    // }
+    // 43)Single number -- O(n) & O(1)
+    // public static int singleElement(int nums[]){
+    // int result = 0;
+    // for (int num : nums) {
+    // result = result ^ num;
+    // }
+    // return result;
+    // }
+    // public static void main(String[] args) {
+    // int nums[] = {2, 2, 1};
+    // System.out.println(singleElement(nums));
+    // }
+
+    // 44)Contains duplicate
+
+    // public static boolean conDuplicate(int nums[]){
+    // HashSet<Integer> set = new HashSet<Integer>();
+
+    // for(int num:nums){
+    // if (set.contains(num)) {
+    // return true;
+    // }
+    // set.add(num);
+    // }
+
+    // return false;
+    // }
+    // public static void main(String[] args) {
+    // int nums[] = {1,1,1,3,3,4,3,2,4,2};
+    // System.out.println(conDuplicate(nums));
+    // }
+    // 45)Contains duplicate -II , abs(i - j) <= k
+    // public static boolean conDuplicate(int nums[], int k){
+    // HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
+    // for(int i = 0; i < nums.length; i++){
+    // if (map.containsKey(nums[i])) {
+    // int diff = Math.abs(map.get(nums[i]) - i);
+    // if (diff <= k) {
+    // return true;
+    // }
+    // }
+    // map.put(nums[i], i);
+    // }
+    // return false;
+    // }
+    // public static void main(String[] args) {
+    // int nums[] = {1,2,3,1,2,3};
+    // int k = 2;
+    // System.out.println(conDuplicate(nums, k));
+    // }
+    // 46)check palindrome LinkedList
+        //static class ListNode {
+        //         int val;
+        //         ListNode next;
+
+        //         ListNode() {
+        //         }
+
+        //         ListNode(int val) {
+        //             this.val = val;
+        //         }
+
+        //         ListNode(int val, ListNode next) {
+        //             this.val = val;
+        //             this.next = next;
+        //         }
+        //     }
+
+        //     public static boolean isPalindrome(ListNode head){
+        //         List<Integer> list = new ArrayList<Integer>();
+
+        //         ListNode current = head;
+        //         while(current != null){
+        //             list.add(current.val);
+        //             current = current.next;
+        //         }
+
+        //         int left = 0;
+        //         int right = list.size() -  1;
+        //         while (left < right) {
+        //             if (list.get(left) != list.get(right)) {
+        //                 return false;
+        //             }else{
+        //                 left++;
+        //                 right--;
+        //             }
+        //         }
+        //         return true;
+        //     }
+
+
+
+        // public static void main(String[] args) {
+
+        //     ListNode head = new ListNode(1);
+        //     head.next = new ListNode(2);
+        //     head.next.next = new ListNode(2);
+        //     head.next.next.next = new ListNode(1);
+
+        //     boolean ans = isPalindrome(head);
+
+        //     System.out.println(ans);
+        // }
+
+   //47)Valid anagram
+        // public static boolean isAnagram(String s, String t){
+        //     if (s.length() != t.length()) {
+        //         return false;
+        //     }
+
+        //     int count[] = new int[26];
+        //     for(int i = 0; i < s.length(); i++){
+        //         char ch = s.charAt(i);
+        //         count[ch - 'a']++;
+        //     }
+        //     for(int  i = 0; i < t.length(); i++){
+        //         char ch = t.charAt(i);
+        //         count[ch - 'a']--;
+        //     }
+
+        //     for(int i = 0; i < count.length ; i++){
+        //         if (count[i] > 0) {
         //             return false;
         //         }
-        //         left++;
-        //         right--;
         //     }
         //     return true;
         // }
-
-        // public static boolean validPalindrome(String s){
-        //     StringBuilder sb = new StringBuilder();
-        //     for(int i = 0; i < s.length(); i++){
-        //         char ch = s.charAt(i);
-        //         if (Character.isLetter(ch) || Character.isDigit(ch)) {
-        //             sb.append(ch);
-        //         }
-        //     }
-
-        //     String result = sb.toString();
-        //     result = result.toLowerCase();
-        //     if (checkPalindrome(result)) {
-        //         return true;
-        //     }
-        //     return false;
-        // }
         // public static void main(String[] args) {
-        //     String s = "A man, a plan, a canal: Panama";
-        //     System.out.println(validPalindrome(s));
+        //     String s = "anagram";
+        //     String t = "nagaram";
 
-        // }
-   //43)Single number -- O(n) & O(1)
-    //    public static int singleElement(int nums[]){
-    //     int result = 0;
-    //     for (int num : nums) {
-    //         result = result ^ num;
-    //     }
-    //     return result;
-    //    }
-    //    public static void main(String[] args) {
-    //     int nums[] = {2, 2, 1};
-    //     System.out.println(singleElement(nums));
-    //    }
+        //     System.out.println(isAnagram(s, t));
 
-    //44)Contains duplicate 
+        // }     
 
-    // public static boolean conDuplicate(int nums[]){
-    //     HashSet<Integer> set = new HashSet<Integer>();
-
-    //     for(int num:nums){
-    //         if (set.contains(num)) {
-    //             return true;
-    //         }
-    //         set.add(num);
-    //     }
-
-    //     return false;
-    // }
-    // public static void main(String[] args) {
-    //     int nums[] = {1,1,1,3,3,4,3,2,4,2};
-    //     System.out.println(conDuplicate(nums));
-    // }
-    //45)Contains duplicate -II , abs(i - j) <= k
-      public static boolean conDuplicate(int nums[], int k){
-        HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
-        for(int i = 0; i < nums.length; i++){
-            if (map.containsKey(nums[i])) {
-                int diff = Math.abs(map.get(nums[i]) - i);
-                if (diff <= k) {
-                    return true;
-                }
-            }
-            map.put(nums[i], i);
-        }
-        return false;
-      }
-      public static void main(String[] args) {
-        int nums[] = {1,2,3,1,2,3};
-        int k = 2;
-        System.out.println(conDuplicate(nums, k));
-    }
 }
