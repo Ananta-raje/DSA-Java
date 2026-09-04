@@ -1308,6 +1308,53 @@ public class java {
 
         //     System.out.println(isAnagram(s, t));
 
-        // }     
+        // }
+        
+        //48)Move zeros
+
+            // public static int[] moveZeros(int nums[]){
+            //     int index = 0;
+            //     for(int i = 0; i < nums.length; i++){
+            //         if (nums[i] != 0) {
+            //             nums[index] = nums[i];
+            //             index++;
+            //         }
+            //     }
+            //     for(int i = index; i < nums.length; i++){
+            //         nums[i] = 0;
+            //     }
+
+            //     return nums;
+            // }
+            // public static void main(String[] args) {
+            //     int nums[] = {0, 1, 0, 3, 12};
+            //     System.out.println(Arrays.toString(moveZeros(nums)));
+
+            // }
+
+        //49) Reverse a char of array
+
+        public static void reverse(char s[]){
+            int left = 0;
+            int right = s.length - 1;
+            while (left < right) {
+                char temp = s[left];
+                s[left] = s[right];
+                s[right] = temp;
+
+                left++;
+                right--;
+            }
+
+        }
+            public static void main(String[] args) {
+            char s[] = {'h','e','l','l','o'};
+                System.out.println("Before reversing: " + Arrays.toString(s));
+
+            reverse(s);
+
+             System.out.println("After reversing: " + Arrays.toString(s));
+         }
+
 
 }
