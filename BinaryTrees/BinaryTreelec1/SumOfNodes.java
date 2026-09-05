@@ -1,6 +1,6 @@
 package BinaryTrees.BinaryTreelec1;
 
-public class CountOfBinaryTree {
+public class SumOfNodes {
     static class Node {
         int data;
         Node left;
@@ -13,14 +13,14 @@ public class CountOfBinaryTree {
         }
     }
 
-    public static int count(Node root) {
+    public static int sum(Node root) {
         if (root == null) {
             return 0;
         }
-        int lc = count(root.left);
-        int rc = count(root.right);
+        int lc = sum(root.left);
+        int rc = sum(root.right);
 
-        return (lc + rc) + 1;
+        return (lc + rc) + root.data;
 
     }
 
@@ -32,6 +32,6 @@ public class CountOfBinaryTree {
         root.left.left = new Node(4);
         root.left.right = new Node(7);
 
-        System.out.println(count(root));
+        System.out.println(sum(root));
     }
 }

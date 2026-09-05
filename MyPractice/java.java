@@ -1334,26 +1334,58 @@ public class java {
 
         //49) Reverse a char of array
 
-        public static void reverse(char s[]){
-            int left = 0;
-            int right = s.length - 1;
-            while (left < right) {
-                char temp = s[left];
-                s[left] = s[right];
-                s[right] = temp;
+            // public static void reverse(char s[]){
+            //     int left = 0;
+            //     int right = s.length - 1;
+            //     while (left < right) {
+            //         char temp = s[left];
+            //         s[left] = s[right];
+            //         s[right] = temp;
 
-                left++;
-                right--;
+            //         left++;
+            //         right--;
+            //     }
+
+            // }
+            //     public static void main(String[] args) {
+            //     char s[] = {'h','e','l','l','o'};
+            //         System.out.println("Before reversing: " + Arrays.toString(s));
+
+            //     reverse(s);
+
+            //     System.out.println("After reversing: " + Arrays.toString(s));
+         //}
+
+         //50)Ransom Note 
+
+         public static boolean ransom(String ransomNote, String magazine){
+            HashMap<Character, Integer> map = new HashMap<Character,Integer>();
+            for(int  i= 0; i < magazine.length(); i++){
+                if (map.containsKey(magazine.charAt(i))) {
+                    map.put(magazine.charAt(i), map.get(magazine.charAt(i)) + 1);
+                }else{
+                    map.put(magazine.charAt(i), 1);
+                }
             }
-
-        }
-            public static void main(String[] args) {
-            char s[] = {'h','e','l','l','o'};
-                System.out.println("Before reversing: " + Arrays.toString(s));
-
-            reverse(s);
-
-             System.out.println("After reversing: " + Arrays.toString(s));
+            int count = 0;
+            for(int  i= 0; i < ransomNote.length(); i++){
+                Character ch = ransomNote.charAt(i);
+                if (map.containsKey(ch) && map.get(ch) > 0) {
+                    count++;
+                    map.put(ch, map.get(ch) - 1);
+                }else{
+                    break;
+                }
+            }
+            if (count == ransomNote.length()) {
+                return true;
+            }
+            return false;
+         }
+         public static void main(String[] args) {
+            String ransomNote = "aa";
+            String magazine = "aab"; 
+            System.out.println(ransom(ransomNote, magazine));
          }
 
 

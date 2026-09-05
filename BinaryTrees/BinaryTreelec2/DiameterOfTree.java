@@ -1,7 +1,9 @@
-package BinaryTrees.BinaryTreelec1;
+package BinaryTrees.BinaryTreelec2;
 
-public class HeightOfBinaryTree {
-    static class Node {
+import org.w3c.dom.Node;
+
+public class DiameterOfTree {
+     static class Node {
         int data;
         Node left;
         Node right;
@@ -25,6 +27,21 @@ public class HeightOfBinaryTree {
     }
 
 
+    //Diameter of a tree
+    public  static int diameter(Node root){  //O(n^2)
+        if (root == null) {
+            return 0;
+        }
+       int ld = diameter(root.left);
+       int lh = height(root.left);
+       int rd = diameter(root.right);
+       int rh = height(root.right);
+       int self = lh + rh + 1;
+       return Math.max(self, Math.max(ld, rd));
+        
+    }
+
+
     public static void main(String[] args) {
 
         Node root = new Node(1);
@@ -36,6 +53,6 @@ public class HeightOfBinaryTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         
-System.out.println(height(root));
+System.out.println(diameter(root));
     }
 }
