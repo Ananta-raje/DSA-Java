@@ -1388,5 +1388,27 @@ public class java {
             //     System.out.println(ransom(ransomNote, magazine));
             // }
 
-        //51)1464-leetcode
+        //51)389-leetcode -- find difference
+
+        public static char findDiff(String s, String t){
+            int s_Sum = 0;
+            int t_Sum = 0;
+            for(int i = 0; i < s.length(); i++){
+                char ch = s.charAt(i);
+                s_Sum += ch;
+            }
+             for(int i = 0; i < t.length(); i++){
+                char ch = t.charAt(i);
+                t_Sum += ch;
+            }
+            int result = t_Sum - s_Sum;
+            return (char)result;
+        }
+        public static void main(String[] args) {
+            String s = "abcd";
+            String t = "abcde";
+            System.out.println(findDiff(s, t));
+        }
+         
+        
 }
