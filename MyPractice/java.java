@@ -1390,25 +1390,72 @@ public class java {
 
         //51)389-leetcode -- find difference
 
-        public static char findDiff(String s, String t){
-            int s_Sum = 0;
-            int t_Sum = 0;
-            for(int i = 0; i < s.length(); i++){
-                char ch = s.charAt(i);
-                s_Sum += ch;
+            // public static char findDiff(String s, String t){
+            //     int s_Sum = 0;
+            //     int t_Sum = 0;
+            //     for(int i = 0; i < s.length(); i++){
+            //         char ch = s.charAt(i);
+            //         s_Sum += ch;
+            //     }
+            //     for(int i = 0; i < t.length(); i++){
+            //         char ch = t.charAt(i);
+            //         t_Sum += ch;
+            //     }
+            //     int result = t_Sum - s_Sum;
+            //     return (char)result;
+            // }
+            // public static void main(String[] args) {
+            //     String s = "abcd";
+            //     String t = "abcde";
+            //     System.out.println(findDiff(s, t));
+            // }
+         
+        //52)Detect capital leetcode 520
+        public static boolean decCap(String word){
+            if (isCap(word) || isFirst(word) || isLower(word)) {
+                return true;
             }
-             for(int i = 0; i < t.length(); i++){
-                char ch = t.charAt(i);
-                t_Sum += ch;
+            return false;
+        }
+
+        private static boolean isCap(String word){
+            int count = 0;
+            for(int i = 0; i < word.length(); i++){
+                char ch =word.charAt(i);
+                if(Character.isUpperCase(ch)){
+                    count++;
+                }
             }
-            int result = t_Sum - s_Sum;
-            return (char)result;
+            if(count == word.length()){
+                return true;
+            }
+            return false;
+        }  
+         private static boolean isLower(String word){
+            int count = 0;
+            for(int i = 0; i < word.length(); i++){
+                char ch =word.charAt(i);
+                if(Character.isLowerCase(ch)){
+                    count++;
+                }
+            }
+            if(count == word.length()){
+                return true;
+            }
+            return false;
+        }  
+        private static boolean isFirst(String word){
+            char ch = word.charAt(0);
+            String sub_String = word.substring(1);
+            if (Character.isUpperCase(ch) && isLower(sub_String)) {
+                return true;
+            }
+            return false;
         }
         public static void main(String[] args) {
-            String s = "abcd";
-            String t = "abcde";
-            System.out.println(findDiff(s, t));
+            String word = "DAD";
+            System.out.println(decCap(word));
         }
-         
+
         
 }
