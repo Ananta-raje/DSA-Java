@@ -1411,51 +1411,103 @@ public class java {
             // }
          
         //52)Detect capital leetcode 520
-        public static boolean decCap(String word){
-            if (isCap(word) || isFirst(word) || isLower(word)) {
-                return true;
-            }
-            return false;
-        }
+            // public static boolean decCap(String word){
+            //     if (isCap(word) || isFirst(word) || isLower(word)) {
+            //         return true;
+            //     }
+            //     return false;
+            // }
 
-        private static boolean isCap(String word){
-            int count = 0;
-            for(int i = 0; i < word.length(); i++){
-                char ch =word.charAt(i);
-                if(Character.isUpperCase(ch)){
-                    count++;
+            // private static boolean isCap(String word){
+            //     int count = 0;
+            //     for(int i = 0; i < word.length(); i++){
+            //         char ch =word.charAt(i);
+            //         if(Character.isUpperCase(ch)){
+            //             count++;
+            //         }
+            //     }
+            //     if(count == word.length()){
+            //         return true;
+            //     }
+            //     return false;
+            // }  
+            // private static boolean isLower(String word){
+            //     int count = 0;
+            //     for(int i = 0; i < word.length(); i++){
+            //         char ch =word.charAt(i);
+            //         if(Character.isLowerCase(ch)){
+            //             count++;
+            //         }
+            //     }
+            //     if(count == word.length()){
+            //         return true;
+            //     }
+            //     return false;
+            // }  
+            // private static boolean isFirst(String word){
+            //     char ch = word.charAt(0);
+            //     String sub_String = word.substring(1);
+            //     if (Character.isUpperCase(ch) && isLower(sub_String)) {
+            //         return true;
+            //     }
+            //     return false;
+            // }
+            // public static void main(String[] args) {
+            //     String word = "DAD";
+            //     System.out.println(decCap(word));
+            // }
+
+            //53)jewels and stones
+
+            // public static  int count(String jewels, String stones){
+            //     HashSet<Character> set = new HashSet<Character>();
+            //     for(int i = 0; i < jewels.length(); i++){
+            //         char ch = jewels.charAt(i);
+            //         set.add(ch);
+            //     }
+            //     int count = 0;
+            //     for(int i = 0; i < stones.length(); i++){
+            //         char ch = stones.charAt(i);
+            //         if (set.contains(ch)) {
+            //             count++;
+            //         }
+            //     }
+            //     return count;
+            // }
+            // public static void main(String[] args) {
+            //     String jewels = "aA";
+            //     String stones = "aAAbbbb";
+            //     System.out.println(count(jewels, stones));
+            // }
+            //54) same question for differnt string;
+
+            public  static int count(String jewels, String stones ){
+                HashSet<String> set = new HashSet<String>();
+                String[] jewelStrArr = jewels.split(", ");
+
+                for(String jewel: jewelStrArr){
+                    set.add(jewel);
                 }
-            }
-            if(count == word.length()){
-                return true;
-            }
-            return false;
-        }  
-         private static boolean isLower(String word){
-            int count = 0;
-            for(int i = 0; i < word.length(); i++){
-                char ch =word.charAt(i);
-                if(Character.isLowerCase(ch)){
-                    count++;
+
+                int count = 0;
+                String[] stoneStrArr = stones.split(", ");
+                for(String stone: stoneStrArr){
+                    if (set.contains(stone)) {
+                        count++;
+                    }
                 }
+                return count;
+
             }
-            if(count == word.length()){
-                return true;
+            public static void main(String[] args) {
+                String jewels = "Gold, Diamond";
+                String stones = "Gold, Iron, Gold, Silver";
+                System.out.println(count(jewels, stones));
+
             }
-            return false;
-        }  
-        private static boolean isFirst(String word){
-            char ch = word.charAt(0);
-            String sub_String = word.substring(1);
-            if (Character.isUpperCase(ch) && isLower(sub_String)) {
-                return true;
-            }
-            return false;
-        }
-        public static void main(String[] args) {
-            String word = "DAD";
-            System.out.println(decCap(word));
-        }
+
+
+            
 
         
 }
