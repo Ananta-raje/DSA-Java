@@ -1481,33 +1481,86 @@ public class java {
             // }
             //54) same question for differnt string;
 
-            public  static int count(String jewels, String stones ){
-                HashSet<String> set = new HashSet<String>();
-                String[] jewelStrArr = jewels.split(", ");
+            // public  static int count(String jewels, String stones ){
+            //     HashSet<String> set = new HashSet<String>();
+            //     String[] jewelStrArr = jewels.split(", ");
 
-                for(String jewel: jewelStrArr){
-                    set.add(jewel);
-                }
+            //     for(String jewel: jewelStrArr){
+            //         set.add(jewel);
+            //     }
 
-                int count = 0;
-                String[] stoneStrArr = stones.split(", ");
-                for(String stone: stoneStrArr){
-                    if (set.contains(stone)) {
-                        count++;
+            //     int count = 0;
+            //     String[] stoneStrArr = stones.split(", ");
+            //     for(String stone: stoneStrArr){
+            //         if (set.contains(stone)) {
+            //             count++;
+            //         }
+            //     }
+            //     return count;
+
+            // }
+            // public static void main(String[] args) {
+            //     String jewels = "Gold, Diamond";
+            //     String stones = "Gold, Iron, Gold, Silver";
+            //     System.out.println(count(jewels, stones));
+
+            // }
+
+            //55) split a string into a balanced string 1221- leetcode
+
+            // public static int balancedStringSplit(String s){
+            //     if (s == null || s.length() == 0) {
+            //         return 0;
+            //     }
+
+            //     int left = 0, right = 0, count = 0;
+
+            //     for(int i = 0; i < s.length(); i++){
+            //         char ch = s.charAt(i);
+            //         if(ch == 'R'){
+            //             right++;
+            //         }else{
+            //             left++;
+            //         }
+            //         if (left == right) {
+            //             count++;
+            //         }
+            //     }
+            //     return count;
+            // }
+            // public static void main(String[] args) {
+            //     String s = "RLRRLLRLRL";
+            //     System.out.println(balancedStringSplit(s));
+            // }
+
+            //56) remove all adjacent duplicate from an String
+
+            public static String removeAdjDup(String str){
+                Stack<Character> s = new Stack<Character>();
+
+                for(int i = 0; i < str.length(); i++){
+                    char ch = str.charAt(i);
+                    if (s.isEmpty()) {
+                        
+                        s.push(ch);
+                    }else if(s.peek() == ch){
+                        s.pop();
+                    }else{
+                        s.push(ch);
                     }
                 }
-                return count;
 
+                StringBuilder sb = new StringBuilder();
+                sb.append(s.pop());
+                return sb.reverse().toString();
             }
             public static void main(String[] args) {
-                String jewels = "Gold, Diamond";
-                String stones = "Gold, Iron, Gold, Silver";
-                System.out.println(count(jewels, stones));
+                String str = "abbaca";
+                System.out.println(removeAdjDup(str));
 
             }
 
 
-            
 
         
 }
