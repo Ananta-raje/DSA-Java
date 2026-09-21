@@ -1535,32 +1535,52 @@ public class java {
 
             //56) remove all adjacent duplicate from an String
 
-            public static String removeAdjDup(String str){
-                Stack<Character> s = new Stack<Character>();
+            // public static String removeAdjDup(String str){
+            //     Stack<Character> s = new Stack<Character>();
 
-                for(int i = 0; i < str.length(); i++){
-                    char ch = str.charAt(i);
-                    if (s.isEmpty()) {
+            //     for(int i = 0; i < str.length(); i++){
+            //         char ch = str.charAt(i);
+            //         if (s.isEmpty()) {
                         
-                        s.push(ch);
-                    }else if(s.peek() == ch){
-                        s.pop();
-                    }else{
-                        s.push(ch);
-                    }
+            //             s.push(ch);
+            //         }else if(s.peek() == ch){
+            //             s.pop();
+            //         }else{
+            //             s.push(ch);
+            //         }
+            //     }
+
+            //     StringBuilder sb = new StringBuilder();
+            //     sb.append(s.pop());
+            //     return sb.reverse().toString();
+            // }
+            // public static void main(String[] args) {
+            //     String str = "abbaca";
+            //     System.out.println(removeAdjDup(str));
+
+            // }
+      
+            //57)concatenation of Arrays
+
+            public static int[] conArrya(int nums[]){
+                int ans[] = new int[2 * nums.length];
+                for(int i = 0; i < nums.length; i++){
+                    ans[i] = nums[i];
                 }
 
-                StringBuilder sb = new StringBuilder();
-                sb.append(s.pop());
-                return sb.reverse().toString();
+                int index = nums.length;
+
+                for(int i = 0; i < nums.length; i++){
+                    ans[index] = nums[i];
+                    index++;
+                }
+
+                return ans;
             }
             public static void main(String[] args) {
-                String str = "abbaca";
-                System.out.println(removeAdjDup(str));
-
+                int[] nums = {1,2,1};
+                System.out.println(Arrays.toString(conArrya(nums)));
             }
-
-
 
         
 }
