@@ -1562,25 +1562,41 @@ public class java {
       
             //57)concatenation of Arrays
 
-            public static int[] conArrya(int nums[]){
-                int ans[] = new int[2 * nums.length];
-                for(int i = 0; i < nums.length; i++){
-                    ans[i] = nums[i];
+            // public static int[] conArrya(int nums[]){
+            //     int ans[] = new int[2 * nums.length];
+            //     for(int i = 0; i < nums.length; i++){
+            //         ans[i] = nums[i];
+            //     }
+
+            //     int index = nums.length;
+
+            //     for(int i = 0; i < nums.length; i++){
+            //         ans[index] = nums[i];
+            //         index++;
+            //     }
+
+            //     return ans;
+            // }
+            // public static void main(String[] args) {
+            //     int[] nums = {1,2,1};
+            //     System.out.println(Arrays.toString(conArrya(nums)));
+            // }
+
+            //58)Remmove duplicates from sorted Array
+
+            public static int removeDup(int arr[]){
+                int i = 0;
+                for(int j = 1; i < arr.length; i++){
+                    if (arr[i] != arr[j]) {
+                        i++;
+                        arr[i] = arr[j];
+                    }
                 }
-
-                int index = nums.length;
-
-                for(int i = 0; i < nums.length; i++){
-                    ans[index] = nums[i];
-                    index++;
-                }
-
-                return ans;
+                return i + 1;
             }
             public static void main(String[] args) {
-                int[] nums = {1,2,1};
-                System.out.println(Arrays.toString(conArrya(nums)));
+                int arr[] = {1, 1, 2, 2, 2, 3, 4, 4};
+                System.out.println(removeDup(arr));
             }
-
         
 }
