@@ -1,6 +1,17 @@
 
-
 public class ArraysCC{
+
+//print the array
+//    //With array of integer
+//         int arr[] = { 12, 15, 18 };
+//         System.out.println(arr);//[I@5d47c63f
+//         System.out.println(Arrays.toString(arr));//[12, 15, 18]
+
+//     //With array of string
+//         String str[] = { "abc", "xyz" };
+//         System.out.println(str);//[Ljava.lang.String;@5ea434c8
+//         System.out.println(Arrays.toString(str));//[abc, xyz]
+
 // find the index of element in a given array ---Linear Search 
     // public static int LinearSearch(int numbers[],int key){
     //     for (int i=0;i<numbers.length;i++){

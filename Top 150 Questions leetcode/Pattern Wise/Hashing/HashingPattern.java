@@ -62,38 +62,66 @@ public class HashingPattern {
 
     // //3)Leetcod 49 - Group Anagrams
 
-//     public static  List<List<String>> groupAnagrams(String[] strs) {
-//         HashMap<String, List<String>> map = new HashMap<>();
-//          for(String s: strs){
-//             int count[] = new int[26];
-//             for(char c: s.toCharArray()){
-//                 count[c - 'a']++;
-//             }
+    // public static List<List<String>> groupAnagrams(String[] strs) {
+    // HashMap<String, List<String>> map = new HashMap<>();
+    // for(String s: strs){
+    // int count[] = new int[26];
+    // for(char c: s.toCharArray()){
+    // count[c - 'a']++;
+    // }
 
-//             StringBuilder sb = new StringBuilder();
+    // StringBuilder sb = new StringBuilder();
 
-//             for(int i: count){
-//                 sb.append('#');
-//                 sb.append(i);
-//             }
+    // for(int i: count){
+    // sb.append('#');
+    // sb.append(i);
+    // }
 
-//             String key = sb.toString();
+    // String key = sb.toString();
 
-//             if(!map.containsKey(key)){
-//                 map.put(key, new ArrayList<String>());
-//             }
-//             map.get(key).add(s);
-//          }
+    // if(!map.containsKey(key)){
+    // map.put(key, new ArrayList<String>());
+    // }
+    // map.get(key).add(s);
+    // }
 
-//          return new ArrayList<>(map.values());
+    // return new ArrayList<>(map.values());
 
-//     }
+    // }
 
+    // public static void main(String[] args) {
+    // String[] strs = {"eat", "xtea", "tan", "ate", "nat", "bat"};
 
+    // System.out.println(groupAnagrams(strs));
+    // }
 
-//    public static void main(String[] args) {
-//     String[] strs = {"eat", "xtea", "tan", "ate", "nat", "bat"};
+    // 3)Leetcode 347 - Top k frequent elements
 
-//   System.out.println(groupAnagrams(strs));
-// }
+    public static int[] topK(int nums[], int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        //count frequency
+        for(int num: nums){
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        //store unique 
+        List<Integer> list = new ArrayList<>(map.keySet());
+
+        //sort
+        list.sort((a,b) -> map.get(b) - map.get(a));
+
+        int result[] = new int[k];
+
+        for(int i = 0; i < k; i++){
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int nums[] = { 1, 1, 1, 2, 2, 3 };
+        int k = 2;
+        System.err.println(Arrays.toString(topK(nums, k)));
+    }
 }
