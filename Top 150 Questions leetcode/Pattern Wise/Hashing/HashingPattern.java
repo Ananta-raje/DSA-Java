@@ -95,33 +95,68 @@ public class HashingPattern {
     // System.out.println(groupAnagrams(strs));
     // }
 
-    // 3)Leetcode 347 - Top k frequent elements
+    // // 4)Leetcode 347 - Top k frequent elements
 
-    public static int[] topK(int nums[], int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+    // public static int[] topK(int nums[], int k) {
+    //     HashMap<Integer, Integer> map = new HashMap<>();
 
-        //count frequency
+    //     //count frequency
+    //     for(int num: nums){
+    //         map.put(num, map.getOrDefault(num, 0) + 1);
+    //     }
+
+    //     //store unique 
+    //     List<Integer> list = new ArrayList<>(map.keySet());
+
+    //     //sort
+    //     list.sort((a,b) -> map.get(b) - map.get(a));
+
+    //     int result[] = new int[k];
+
+    //     for(int i = 0; i < k; i++){
+    //         result[i] = list.get(i);
+    //     }
+    //     return result;
+    // }
+
+    // public static void main(String[] args) {
+    //     int nums[] = { 1, 1, 1, 2, 2, 3 };
+    //     int k = 2;
+    //     System.err.println(Arrays.toString(topK(nums, k)));
+    // }
+
+
+    // //5)Longest cosecutive sequence - leetcode - 128
+    public static int longConSeq(int nums[]){
+        HashSet<Integer> set = new HashSet<>();
+
         for(int num: nums){
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            set.add(num);
         }
 
-        //store unique 
-        List<Integer> list = new ArrayList<>(map.keySet());
+        int longest = 0; 
 
-        //sort
-        list.sort((a,b) -> map.get(b) - map.get(a));
+        for(int num: set){
 
-        int result[] = new int[k];
+            if (!set.contains(num - 1)) {
+                
+                int current  = num;
+                int count  = 1;
 
-        for(int i = 0; i < k; i++){
-            result[i] = list.get(i);
+                while (set.contains(current + 1)) {
+                    current++;
+                    count++;
+                }
+                longest = Math.max(count, longest);
+            }
         }
-        return result;
+
+        return longest;
     }
 
     public static void main(String[] args) {
-        int nums[] = { 1, 1, 1, 2, 2, 3 };
-        int k = 2;
-        System.err.println(Arrays.toString(topK(nums, k)));
+        int nums[] = {100,4,200,1,3,2};
+        System.out.println(longConSeq(nums));
     }
+    
 }
