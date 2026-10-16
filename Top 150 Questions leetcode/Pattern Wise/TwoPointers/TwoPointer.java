@@ -217,34 +217,34 @@ public class TwoPointer {
 
     // 7)Container with the most water
 
-    public static int maxArea(int height[]) {
-        int n = height.length;
+//     public static int maxArea(int height[]) {
+//         int n = height.length;
 
-        int left = 0;
-        int right = n - 1;
-        int maxArea = 0;
+//         int left = 0;
+//         int right = n - 1;
+//         int maxArea = 0;
 
-        while (left < right) {
-            int ht = Math.min(height[left], height[right]);
-            int wt = right - left;
-            int currArea = ht * wt;
+//         while (left < right) {
+//             int ht = Math.min(height[left], height[right]);
+//             int wt = right - left;
+//             int currArea = ht * wt;
 
-            maxArea = Math.max(maxArea, currArea);
+//             maxArea = Math.max(maxArea, currArea);
 
-            if (height[left] < height[right]) {
-                left++;
-            }else{
-                right--;
-            }
-        }
+//             if (height[left] < height[right]) {
+//                 left++;
+//             }else{
+//                 right--;
+//             }
+//         }
 
-        return maxArea;
+//         return maxArea;
 
-    }
+//     }
 
-   public static void main(String[] args) {
-     int height[] = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
-     System.out.println(maxArea(height));
-   }
+//    public static void main(String[] args) {
+//      int height[] = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+//      System.out.println(maxArea(height));
+//    }
 
 }
