@@ -247,4 +247,41 @@ public class TwoPointer {
 //      System.out.println(maxArea(height));
 //    }
 
+    //8)Traping rain water
+
+    public static int trap(int height[]){
+        int n = height.length;
+
+        int total = 0;
+
+        int prefix[] = new int[n];
+
+        prefix[0] = height[0];
+
+        for(int i = 1; i < n; i++ ){
+            prefix[i] = Math.max(prefix[i - 1], height[i]);
+        }
+
+        int suffix[] = new int[n];
+
+        suffix[n -1] = height[n - 1];
+
+        for(int i = n - 2; i >= 0; i--){
+            suffix[i] = Math.max(suffix[i + 1], height[i]);
+        }
+
+
+        for(int i = 0; i < n; i++){
+            int leftMax = prefix[i];
+            int rightMax = suffix[i];
+            total += Math.min( leftMax, rightMax) - height[i];
+        }
+
+        return total;
+    }
+    public static void main(String[] args) {
+        int height[] = {0,1,0,2,1,0,1,3,2,1,2,1};
+        System.out.println(trap(height));
+    }
+
 }
