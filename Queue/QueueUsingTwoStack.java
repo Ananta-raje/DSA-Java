@@ -28,7 +28,7 @@
 
 //         //remove
 //         public static int remove(){ //O(1)
-//             if (isEmpty()) {
+//             if (isEmpty()) {0
 //                 System.out.println("Queue is empty!!");
 //                 return -1;
 //             }
